@@ -70,7 +70,9 @@ body {
   font: 400 clamp(1rem, .96rem + .2vw, 1.075rem)/1.65 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  /* `clip` et non `hidden` : `hidden` ferait du body un conteneur de
+     défilement, ce qui casserait `position: sticky` sur ses descendants */
+  overflow-x: clip;
 }
 
 body.is-locked { overflow: hidden; }

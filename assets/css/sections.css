@@ -692,13 +692,23 @@
   letter-spacing: .02em;
 }
 
-.story__media--tall { grid-column: span 5; aspect-ratio: 4/5; }
+/* La colonne de texte est bien plus haute que ce portrait (elle contient la
+   photo de campagne). Plutôt que d'étirer le portrait — ce qui l'amputerait
+   de près de la moitié de sa largeur — on le rend solidaire du défilement :
+   il accompagne la lecture et la colonne ne paraît plus vide. */
+.story__media--tall {
+  grid-column: span 5;
+  aspect-ratio: 4/5;
+  position: sticky;
+  top: 96px;
+  align-self: start;
+}
 .story__text        { grid-column: span 7; padding-left: clamp(0rem, 1.5vw, 1.5rem); }
 
-/* Visuel de campagne affiché EN ENTIER : aucun format imposé, le cadre prend
-   la hauteur naturelle de l'image — donc zéro recadrage, y compris au survol.
-   Seul sur sa ligne, il est centré sur les colonnes 4 à 9. */
-.story__media--full { grid-column: 4 / span 6; }
+/* Visuel de campagne, placé sous la liste dans la colonne de texte : aucun
+   format imposé, le cadre prend la hauteur naturelle de l'image — donc zéro
+   recadrage, y compris au survol. */
+.story__media--full { margin-top: 1.8rem; }
 .story__media--full img { height: auto; object-fit: contain; }
 .story__media--full:hover img { transform: none; }
 
@@ -727,9 +737,9 @@
 
 @media (max-width: 860px) {
   .story__media--tall,
-  .story__text,
-  .story__media--full { grid-column: 1 / span 12; }
-  .story__media--tall { aspect-ratio: 5/4; }
+  .story__text { grid-column: 1 / span 12; }
+  /* colonnes empilées : plus de hauteur à combler, donc plus de sticky */
+  .story__media--tall { aspect-ratio: 5/4; position: static; }
   .story__text { padding-left: 0; }
 }
 
