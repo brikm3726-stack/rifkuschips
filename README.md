@@ -151,7 +151,13 @@ produit, lien d'évitement, libellés ARIA, et respect de `prefers-reduced-motio
 **Compatibilité.** Chrome, Edge, Firefox, Safari (bureau et mobile), versions
 récentes. Testé au rendu en 1440 px, 820 px et 390 px.
 
+**Image de partage.** `og:image` pointe sur `kv/harissa-feu.webp` : c'est la
+vignette affichée quand le lien est partagé sur Facebook, WhatsApp ou Instagram.
+Pensez-y si vous changez les visuels — les réseaux la recadrent en 1,91:1.
+
 **Images inutilisées.** `assets/img/kv/` contient encore `harissa-trone.webp`,
-`harissa-feu.webp` et `poulet.webp`, qui servaient à l'ancienne galerie. Plus
-rien ne les référence (elles ne sont donc jamais téléchargées) : on peut les
-supprimer, ou les garder sous la main pour une future section.
+`poulet.webp` et `trio-chips.webp`, qui servaient à l'ancienne galerie et à la
+section « La gamme ». Plus rien ne les affiche (elles ne sont donc jamais
+téléchargées) : on peut les supprimer, ou les garder sous la main. Note :
+`trio-chips.webp` montre l'**ancien** personnage sur le sachet Pizza — à ne pas
+réutiliser tel quel.
