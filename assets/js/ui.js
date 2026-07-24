@@ -160,28 +160,6 @@ window.RIFKUS = window.RIFKUS || {};
     });
   };
 
-  /* ──────────────────────── barre de progression de lecture ──────────────────── */
-
-  R.initProgress = function () {
-    var bar = document.getElementById('navProgress');
-    if (!bar) return;
-    var ticking = false;
-
-    function update() {
-      var max = document.documentElement.scrollHeight - window.innerHeight;
-      bar.style.setProperty('--p', max > 0 ? (window.scrollY / max).toFixed(4) : 0);
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', function () {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(update);
-    }, { passive: true });
-
-    update();
-  };
-
   /* ─────────────────────── couches modales : verrou + focus ─────────────────── */
 
   var FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';

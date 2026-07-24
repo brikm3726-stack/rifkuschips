@@ -24,7 +24,6 @@
     R.initFlavors();
     R.initMood();
     R.initContact();
-    R.initProgress();
     R.initMagnetic();
   });
 
