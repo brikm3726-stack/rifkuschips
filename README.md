@@ -123,6 +123,15 @@ détourés (fond rendu transparent) pour pouvoir flotter en 3D dans le hero et s
 les cartes. Le sachet Pizza, qui n'existait qu'au sein d'une photo de groupe, a
 été reconstitué par silhouette.
 
+**Logo du sachet Pizza — retouché.** La seule photo disponible de ce sachet
+montrait l'**ancien** personnage (moustache épaisse), alors que les neuf autres
+portent le personnage actuel, plus jeune. Le bloc logo a donc été remplacé par
+`logo-rifkus.webp` : le lettrage « RIFKUS » a servi d'ancre pour calculer
+l'échelle et la position, et le logo posé reprend l'ombrage du sachet pour ne
+pas faire autocollant. **Si un jour vous obtenez une vraie photo de ce sachet
+avec le bon personnage, remplacez simplement le fichier** — c'est un montage,
+pas une photo d'origine.
+
 **Aucune dépendance.** Pas de framework, pas de bibliothèque d'animation. Les
 apparitions au scroll utilisent `IntersectionObserver`, les particules un
 `<canvas>` léger qui se met en pause dès que le hero sort de l'écran ou que
