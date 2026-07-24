@@ -1,0 +1,12 @@
+# système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# éditeurs
+.vscode/
+.idea/
+*.swp
+
+# rien à compiler ici : le site est servi tel quel
+node_modules/

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RIFKUS — Le croustillant qui réunit tout le monde</title>
+<meta name="description" content="RIFKUS, la marque algérienne de chips et snacks. Potato Chips, Crispy Rings, Puffs Corn et l’édition Harissa : des saveurs intenses, un croustillant inimitable.">
+<meta name="theme-color" content="#0B0B0F">
+<link rel="canonical" href="https://rifkus.dz/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RIFKUS">
+<meta property="og:title" content="RIFKUS — Le croustillant qui réunit tout le monde">
+<meta property="og:description" content="Des saveurs intenses. Un croustillant inimitable. Une expérience Rifkus.">
+<meta property="og:image" content="assets/img/kv/trio-chips.webp">
+<meta property="og:locale" content="fr_DZ">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/logo-rifkus.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/img/packs/chips-trois-fromages.webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Brand",
+  "name": "RIFKUS",
+  "slogan": "Le croustillant qui réunit tout le monde.",
+  "description": "Marque algérienne de chips et de snacks : Potato Chips, Crispy Rings, Puffs Corn et édition Harissa.",
+  "logo": "assets/img/logo-rifkus.webp",
+  "areaServed": "DZ"
+}
+</script>
+</head>
+
+<body class="is-loading">
+
+<!-- ══════════════════════════ ÉCRAN D’OUVERTURE ══════════════════════════ -->
+<div class="preloader" id="preloader" role="presentation" aria-hidden="true">
+  <div class="preloader__inner">
+    <img class="preloader__logo" src="assets/img/logo-rifkus.webp" alt="" width="249" height="226">
+    <p class="preloader__word">
+      <span>C</span><span>R</span><span>O</span><span>U</span><span>S</span><span>T</span><span>I</span><span>L</span><span>L</span><span>A</span><span>N</span><span>T</span>
+    </p>
+    <div class="preloader__bar"><i></i></div>
+  </div>
+</div>
+
+<a class="skip-link" href="#saveurs">Aller au contenu</a>
+
+<!-- ══════════════════════════════ NAVBAR ══════════════════════════════ -->
+<header class="nav" id="nav">
+  <div class="nav__progress" id="navProgress" aria-hidden="true"></div>
+  <div class="nav__inner shell">
+    <a class="nav__brand" href="#accueil" aria-label="RIFKUS — accueil">
+      <img src="assets/img/logo-rifkus.webp" alt="RIFKUS" width="249" height="226">
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Navigation principale">
+      <!-- data-spy : sections supplémentaires qui allument ce lien -->
+      <a href="#accueil" class="nav__link is-active">Accueil</a>
+      <a href="#saveurs" class="nav__link" data-spy="saveurs pourquoi">Nos saveurs</a>
+      <a href="#marque" class="nav__link" data-spy="mood marque">La marque</a>
+      <a href="#contact" class="nav__link">Contact</a>
+      <a href="#saveurs" class="btn btn--primary btn--sm nav__cta">Découvrir nos saveurs</a>
+    </nav>
+
+    <button class="nav__burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<section class="hero" id="accueil">
+  <canvas class="hero__particles" id="heroParticles" aria-hidden="true"></canvas>
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__grid-lines" aria-hidden="true"></div>
+
+  <div class="shell hero__inner">
+    <div class="hero__copy">
+      <p class="hero__eyebrow anim" data-anim="up" data-delay="0">
+        <span class="flag" aria-hidden="true"></span> Marque algérienne · Depuis Alger
+      </p>
+
+      <h1 class="hero__title anim" data-anim="chars" data-delay="60">
+        Le croustillant<br>qui <em>réunit</em><br>tout le monde.
+      </h1>
+
+      <p class="hero__sub anim" data-anim="up" data-delay="480">
+        Des saveurs intenses. Un croustillant inimitable.<br>
+        Une expérience <strong>Rifkus</strong>.
+      </p>
+
+      <div class="hero__actions anim" data-anim="up" data-delay="580">
+        <a href="#saveurs" class="btn btn--primary btn--lg magnetic">
+          Découvrir les saveurs
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#marque" class="btn btn--ghost btn--lg">Notre histoire</a>
+      </div>
+
+      <dl class="hero__stats anim" data-anim="up" data-delay="680">
+        <div><dt>Saveurs</dt><dd><span class="count" data-count="10">10</span></dd></div>
+        <div><dt>Gammes</dt><dd><span class="count" data-count="4">4</span></dd></div>
+        <div><dt>Croustillant</dt><dd><span class="count" data-count="100">100</span>%</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero__stage" id="heroStage">
+      <div class="hero__halo" aria-hidden="true"></div>
+      <div class="hero__ring" aria-hidden="true"></div>
+
+      <img class="hero__pack hero__pack--main" data-depth="14"
+           src="assets/img/packs/chips-trois-fromages.webp"
+           alt="Sachet Rifkus Potato Chips Three Cheese" width="610" height="825" fetchpriority="high">
+
+      <img class="hero__pack hero__pack--a float" data-depth="34"
+           src="assets/img/packs/harissa.webp"
+           alt="Sachet Rifkus Harissa" width="332" height="444" loading="lazy">
+
+      <img class="hero__pack hero__pack--b float" data-depth="26"
+           src="assets/img/packs/puffs-beef-cheddar.webp"
+           alt="Sachet Rifkus Puffs Corn Beef &amp; Cheddar" width="521" height="743" loading="lazy">
+
+      <img class="hero__pack hero__pack--c float" data-depth="44"
+           src="assets/img/packs/rings-pizza.webp"
+           alt="Sachet Rifkus Crispy Rings saveur Pizza" width="482" height="645" loading="lazy">
+
+      <img class="hero__pack hero__pack--d float" data-depth="20"
+           src="assets/img/packs/puffs-fromage.webp"
+           alt="Sachet Rifkus Puffs Corn Fromage" width="571" height="775" loading="lazy">
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#saveurs" aria-label="Faire défiler">
+    <span></span>
+  </a>
+</section>
+
+<!-- ══════════════════════════════ BANDEAU ══════════════════════════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__row">
+    <div class="marquee__track">
+      <span>Croustillant</span><i>✦</i><span>قرمشة</span><i>✦</i><span>Rifkus</span><i>✦</i>
+      <span>Saveurs intenses</span><i>✦</i><span>100 % Algérien</span><i>✦</i>
+      <span>Croustillant</span><i>✦</i><span>قرمشة</span><i>✦</i><span>Rifkus</span><i>✦</i>
+      <span>Saveurs intenses</span><i>✦</i><span>100 % Algérien</span><i>✦</i>
+    </div>
+  </div>
+  <div class="marquee__row marquee__row--alt">
+    <div class="marquee__track">
+      <span>Potato Chips</span><i>●</i><span>Crispy Rings</span><i>●</i><span>Puffs Corn</span><i>●</i>
+      <span>Harissa</span><i>●</i><span>El Ka3dus</span><i>●</i>
+      <span>Potato Chips</span><i>●</i><span>Crispy Rings</span><i>●</i><span>Puffs Corn</span><i>●</i>
+      <span>Harissa</span><i>●</i><span>El Ka3dus</span><i>●</i>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════════════ NOS SAVEURS ═════════════════════════════ -->
+<section class="flavors section" id="saveurs">
+  <div class="shell">
+    <header class="section__head">
+      <p class="section__kicker anim" data-anim="up">01 — La gamme</p>
+      <h2 class="section__title anim" data-anim="words">Nos saveurs</h2>
+      <p class="section__lead anim" data-anim="up" data-delay="120">
+        Quatre gammes, dix caractères. Chaque sachet Rifkus a sa personnalité,
+        sa couleur et son moment.
+      </p>
+    </header>
+
+    <div class="filters anim" data-anim="up" data-delay="160" role="tablist" aria-label="Filtrer les saveurs">
+      <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Tout</button>
+      <button class="filter" data-filter="chips" role="tab" aria-selected="false">Potato Chips</button>
+      <button class="filter" data-filter="rings" role="tab" aria-selected="false">Crispy Rings</button>
+      <button class="filter" data-filter="puffs" role="tab" aria-selected="false">Puffs Corn</button>
+      <button class="filter" data-filter="feu" role="tab" aria-selected="false">Édition Feu</button>
+    </div>
+
+    <div class="flavor-grid" id="flavorGrid">
+
+      <article class="flavor-card anim" data-anim="card" data-range="chips"
+        style="--f:#F2A900; --f-deep:#5E3800"
+        data-name="Trois Fromages" data-label="Potato Chips"
+        data-img="assets/img/packs/chips-trois-fromages.webp"
+        data-heat="1"
+        data-moment="La soirée film"
+        data-long="Un trio de fromages affinés déposé sur une chips à la coupe fine. Le goût fond d’abord, le croustillant reste. C’est la saveur qui met tout le monde d’accord autour du même sachet.">
+        <div class="flavor-card__bg" aria-hidden="true"></div>
+        <div class="flavor-card__shine" aria-hidden="true"></div>
+        <div class="flavor-card__media">
+          <img src="assets/img/packs/chips-trois-fromages.webp" alt="Rifkus Potato Chips Three Cheese" width="610" height="825" loading="lazy">
+        </div>
+        <div class="flavor-card__body">
+          <p class="flavor-card__range">Potato Chips</p>
+          <h3 class="flavor-card__name">Trois Fromages</h3>
+          <p class="flavor-card__desc">Fondant, généreux, impossible à partager équitablement.</p>
+          <span class="flavor-card__cta">Découvrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <article class="flavor-card anim" data-anim="card" data-range="chips"
+        style="--f:#E4032E; --f-deep:#54000C"
+        data-name="Ketchup" data-label="Potato Chips"
+        data-img="assets/img/packs/chips-ketchup.webp"
+        data-heat="2"
+        data-moment="Le match entre amis"
+        data-long="L’acidulé sucré du ketchup, version croustillante. Une saveur franche, immédiatement reconnaissable, qui réveille la chips dès la première bouchée.">
+        <div class="flavor-card__bg" aria-hidden="true"></div>
+        <div class="flavor-card__shine" aria-hidden="true"></div>
+        <div class="flavor-card__media">
+          <img src="assets/img/packs/chips-ketchup.webp" alt="Rifkus Potato Chips Ketchup" width="608" height="824" loading="lazy">
+        </div>
+        <div class="flavor-card__body">
+          <p class="flavor-card__range">Potato Chips</p>
+          <h3 class="flavor-card__name">Ketchup</h3>
+          <p class="flavor-card__desc">Acidulé, sucré, addictif. Le classique qui ne déçoit jamais.</p>
+          <span class="flavor-card__cta">Découvrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <article class="flavor-card anim" data-anim="card" data-range="chips"
+        style="--f:#C98B2E; --f-deep:#1A1A1E"
+        data-name="Poulet Rôti" data-label="Potato Chips"
+        data-img="assets/img/packs/chips-poulet.webp"
+        data-heat="1"
+        data-moment="La pause de 16 h"
+        data-long="Le goût d’un poulet doré au four, herbes comprises, capturé dans une chips fine. Une saveur salée, ronde et rassurante — celle qu’on redemande.">
+        <div class="flavor-card__bg" aria-hidden="true"></div>
+        <div class="flavor-card__shine" aria-hidden="true"></div>
+        <div class="flavor-card__media">
+          <img src="assets/img/packs/chips-poulet.webp" alt="Rifkus Potato Chips Poulet" width="606" height="823" loading="lazy">
+        </div>
+        <div class="flavor-card__body">
+          <p class="flavor-card__range">Potato Chips</p>
+          <h3 class="flavor-card__name">Poulet Rôti</h3>
+          <p class="flavor-card__desc">Doré, herbacé, réconfortant. Comme sorti du four.</p>
+          <span class="flavor-card__cta">Découvrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <article class="flavor-card anim" data-anim="card" data-range="rings"
+        style="--f:#1E9BD7; --f-deep:#062E45"
+        data-name="Anneaux Pizza" data-label="Crispy Rings"
+        data-img="assets/img/packs/rings-pizza.webp"
+        data-heat="1"
+        data-moment="La soirée entre potes"
+        data-long="Tomate, origan et fromage sur des anneaux de maïs ultra légers. Une part de pizza à chaque bouchée, sans attendre la livraison.">
+        <div class="flavor-card__bg" aria-hidden="true"></div>
+        <div class="flavor-card__shine" aria-hidden="true"></div>
+        <div class="flavor-card__media">
+          <img src="assets/img/packs/rings-pizza.webp" alt="Rifkus Crispy Rings saveur Pizza" width="482" height="645" loading="lazy">
+        </div>
+        <div class="flavor-card__body">
+          <p class="flavor-card__range">Crispy Rings</p>
+          <h3 class="flavor-card__name">Anneaux Pizza</h3>
+          <p class="flavor-card__desc">Tomate, origan, fromage. La pizza en format anneau.</p>
+          <span class="flavor-card__cta">Découvrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <article class="flavor-card anim" data-anim="card" data-range="rings"
+        style="--f:#D6202B; --f-deep:#4A0209"
+        data-name="Anneaux Ketchup" data-label="Crispy Rings"
+        data-img="assets/img/packs/rings-ketchup.webp"
+        data-heat="2"
+        data-moment="Le goûter"
+        data-long="Des anneaux de maïs soufflés nappés de ketchup. Plus aériens qu’une chips, plus bruyants aussi. Le croustillant qui claque.">
+        <div class="flavor-card__bg" aria-hidden="true"></div>
+        <div class="flavor-card__shine" aria-hidden="true"></div>
+        <div class="flavor-card__media">
+          <img src="assets/img/packs/rings-ketchup.webp" alt="Rifkus Crispy Rings saveur Ketchup" width="608" height="825" loading="lazy">
+        </div>
+        <div class="flavor-card__body">
+          <p class="flavor-card__range">Crispy Rings</p>
+          <h3 class="flavor-card__name">Anneaux Ketchup</h3>
+          <p class="flavor-card__desc">Léger, soufflé, sonore. Le croustillant qui claque.</p>
+          <span class="flavor-card__cta">Découvrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <article class="flavor-card anim" data-anim="card" data-range="rings"
+        style="--f:#E2761B; --f-deep:#1A1A1E"
+        data-name="Anneaux Poulet Grillé" data-label="Crispy Rings"
+        data-img="assets/img/packs/rings-poulet-grille.webp"
+        data-heat="2"
+        data-moment="Le trajet du retour"
+        data-long="Le fumé du grill posé sur des anneaux de maïs ultra légers. Une saveur profonde, presque barbecue, qui tient jusqu’au fond du sachet.">
+        <div class="flavor-card__bg" aria-hidden="true"></div>
+        <div class="flavor-card__shine" aria-hidden="true"></div>
+        <div class="flavor-card__media">
+          <img src="assets/img/packs/rings-poulet-grille.webp" alt="Rifkus Crispy Rings saveur Poulet Grillé" width="366" height="496" loading="lazy">
+        </div>
+        <div class="flavor-card__body">
+          <p class="flavor-card__range">Crispy Rings</p>
+          <h3 class="flavor-card__name">Poulet Grillé</h3>
+          <p class="flavor-card__desc">Fumé, profond, presque barbecue.</p>
+          <span class="flavor-card__cta">Découvrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <article class="flavor-card anim" data-anim="card" data-range="puffs"
+        style="--f:#F07C1E; --f-deep:#4A1E00"
+        data-name="Boules Fromage" data-label="Puffs Corn"
+        data-img="assets/img/packs/puffs-fromage.webp"
+        data-heat="1" data-kcal="160"
+        data-moment="Le premier sachet ouvert"
+        data-long="Des boules de maïs soufflé enrobées de fromage. Fondantes dehors, croustillantes dedans, elles disparaissent à une vitesse déraisonnable.">
+        <div class="flavor-card__bg" aria-hidden="true"></div>
+        <div class="flavor-card__shine" aria-hidden="true"></div>
+        <div class="flavor-card__media">
+          <img src="assets/img/packs/puffs-fromage.webp" alt="Rifkus Chips Ball Puffs Corn saveur Fromage" width="571" height="775" loading="lazy">
+        </div>
+        <div class="flavor-card__body">
+          <p class="flavor-card__range">Puffs Corn</p>
+          <h3 class="flavor-card__name">Boules Fromage</h3>
+          <p class="flavor-card__desc">Fondant dehors, croustillant dedans. Le grand favori.</p>
+          <span class="flavor-card__cta">Découvrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <article class="flavor-card anim" data-anim="card" data-range="puffs"
+        style="--f:#8B47B4; --f-deep:#2A0E3A"
+        data-name="Boules Beef &amp; Cheddar" data-label="Puffs Corn"
+        data-img="assets/img/packs/puffs-beef-cheddar.webp"
+        data-heat="2" data-kcal="160"
+        data-moment="La grosse faim"
+        data-long="Bœuf grillé et cheddar coulant sur du maïs soufflé. Le duo le plus gourmand de la gamme : celui qu’on cache pour le garder.">
+        <div class="flavor-card__bg" aria-hidden="true"></div>
+        <div class="flavor-card__shine" aria-hidden="true"></div>
+        <div class="flavor-card__media">
+          <img src="assets/img/packs/puffs-beef-cheddar.webp" alt="Rifkus Chips Ball Puffs Corn saveur Beef &amp; Cheddar" width="521" height="743" loading="lazy">
+        </div>
+        <div class="flavor-card__body">
+          <p class="flavor-card__range">Puffs Corn</p>
+          <h3 class="flavor-card__name">Beef &amp; Cheddar</h3>
+          <p class="flavor-card__desc">Bœuf grillé, cheddar coulant. Le plus gourmand.</p>
+          <span class="flavor-card__cta">Découvrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <article class="flavor-card anim" data-anim="card" data-range="puffs"
+        style="--f:#B0243F; --f-deep:#38040F"
+        data-name="Boules Cacahuète" data-label="Puffs Corn"
+        data-img="assets/img/packs/puffs-cacahuete.webp"
+        data-heat="1" data-kcal="160"
+        data-moment="Le thé de l’après-midi"
+        data-long="La douceur grillée de la cacahuète sur un maïs ultra aérien. Une saveur ronde, légèrement sucrée, qui se marie avec tout.">
+        <div class="flavor-card__bg" aria-hidden="true"></div>
+        <div class="flavor-card__shine" aria-hidden="true"></div>
+        <div class="flavor-card__media">
+          <img src="assets/img/packs/puffs-cacahuete.webp" alt="Rifkus Chips Ball Puffs Corn saveur Cacahuète" width="570" height="774" loading="lazy">
+        </div>
+        <div class="flavor-card__body">
+          <p class="flavor-card__range">Puffs Corn</p>
+          <h3 class="flavor-card__name">Boules Cacahuète</h3>
+          <p class="flavor-card__desc">Grillée, ronde, légèrement sucrée.</p>
+          <span class="flavor-card__cta">Découvrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <article class="flavor-card flavor-card--fire anim" data-anim="card" data-range="feu"
+        style="--f:#FF3B1F; --f-deep:#2A0400"
+        data-name="Harissa" data-label="Édition Feu"
+        data-img="assets/img/packs/harissa.webp"
+        data-heat="5"
+        data-moment="Le défi du groupe"
+        data-long="La harissa algérienne, brute et assumée, sur une chips gaufrée qui tient la chaleur. Ça monte, ça reste, et pourtant on replonge la main. Réservé à ceux qui aiment quand ça pique.">
+        <div class="flavor-card__bg" aria-hidden="true"></div>
+        <div class="flavor-card__shine" aria-hidden="true"></div>
+        <span class="flavor-card__badge">🔥 Spicy</span>
+        <div class="flavor-card__media">
+          <img src="assets/img/packs/harissa.webp" alt="Rifkus Harissa Flavor Spicy" width="332" height="444" loading="lazy">
+        </div>
+        <div class="flavor-card__body">
+          <p class="flavor-card__range">Édition Feu</p>
+          <h3 class="flavor-card__name">Harissa</h3>
+          <p class="flavor-card__desc">Brute, assumée, algérienne. Pour ceux qui tiennent.</p>
+          <span class="flavor-card__cta">Découvrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="flavors__empty" id="flavorsEmpty" hidden>Aucune saveur dans cette gamme.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ POURQUOI RIFKUS ═══════════════════════════ -->
+<section class="why section" id="pourquoi">
+  <div class="shell">
+    <header class="section__head section__head--center">
+      <p class="section__kicker anim" data-anim="up">02 — La promesse</p>
+      <h2 class="section__title anim" data-anim="words">Pourquoi Rifkus&nbsp;?</h2>
+    </header>
+
+    <div class="why__grid">
+      <article class="why__card anim" data-anim="card">
+        <div class="why__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M24 4 29 17l14 1-10.5 9.5L36 41l-12-7-12 7 3.5-13.5L5 18l14-1z"/></svg>
+        </div>
+        <h3>Un croustillant irrésistible</h3>
+        <p>Une cuisson maîtrisée, une texture qui claque sous la dent et tient jusqu’à la dernière poignée.</p>
+        <span class="why__num" aria-hidden="true">01</span>
+      </article>
+
+      <article class="why__card anim" data-anim="card" data-delay="80">
+        <div class="why__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M26 4c1 7-2 9-5 12s-7 6-7 13a14 14 0 0 0 28 0c0-6-3-10-6-13-1 3-2 4-4 5 1-6-2-13-6-17z"/><path d="M24 42a7 7 0 0 1-4-12c0 3 2 4 4 5 1-3 0-5-1-7 4 1 8 5 8 9a7 7 0 0 1-7 5z"/></svg>
+        </div>
+        <h3>Des saveurs intenses</h3>
+        <p>Fromage, harissa, poulet grillé : des goûts francs, dosés pour marquer dès la première bouchée.</p>
+        <span class="why__num" aria-hidden="true">02</span>
+      </article>
+
+      <article class="why__card anim" data-anim="card" data-delay="160">
+        <div class="why__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 13v11l7 5"/></svg>
+        </div>
+        <h3>Un snack pour chaque moment</h3>
+        <p>La pause de 16&nbsp;h, le match, la route, la soirée. Quatre gammes pour ne jamais tomber à court.</p>
+        <span class="why__num" aria-hidden="true">03</span>
+      </article>
+
+      <article class="why__card anim" data-anim="card" data-delay="240">
+        <div class="why__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M8 40V12l16-6 16 6v28"/><path d="M18 40V26h12v14"/></svg>
+        </div>
+        <h3>Une marque algérienne moderne</h3>
+        <p>Née ici, pensée pour ici. Rifkus parle la langue de la rue et assume son énergie.</p>
+        <span class="why__num" aria-hidden="true">04</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════ CHOISIS TON MOOD ═════════════════════════ -->
+<section class="mood section" id="mood" data-mood="none">
+  <div class="mood__aura" aria-hidden="true"></div>
+  <div class="shell">
+    <header class="section__head section__head--center">
+      <p class="section__kicker anim" data-anim="up">03 — Le jeu</p>
+      <h2 class="section__title anim" data-anim="words">Choisis ton mood</h2>
+      <p class="section__lead anim" data-anim="up" data-delay="120">
+        Un clic, et Rifkus te dit quoi ouvrir.
+      </p>
+    </header>
+
+    <div class="mood__picker anim" data-anim="up" data-delay="160" role="group" aria-label="Choisis ton mood">
+      <button class="mood__btn" data-mood="epice"    aria-pressed="false"><span aria-hidden="true">🔥</span> Épicé</button>
+      <button class="mood__btn" data-mood="fromage"  aria-pressed="false"><span aria-hidden="true">🧀</span> Fromagé</button>
+      <button class="mood__btn" data-mood="gourmand" aria-pressed="false"><span aria-hidden="true">🍗</span> Gourmand</button>
+      <button class="mood__btn" data-mood="fun"      aria-pressed="false"><span aria-hidden="true">🍕</span> Fun</button>
+    </div>
+
+    <div class="mood__result" id="moodResult" aria-live="polite">
+      <div class="mood__placeholder" id="moodPlaceholder">
+        <p>Sélectionne une humeur pour découvrir ta saveur du jour.</p>
+      </div>
+      <div class="mood__card" id="moodCard" hidden>
+        <div class="mood__pack">
+          <div class="mood__burst" aria-hidden="true"></div>
+          <img id="moodImg" src="" alt="" width="571" height="775">
+        </div>
+        <div class="mood__text">
+          <p class="mood__verdict" id="moodVerdict"></p>
+          <h3 class="mood__flavor" id="moodFlavor"></h3>
+          <p class="mood__desc" id="moodDesc"></p>
+          <button class="btn btn--primary" id="moodOpen" type="button">Voir la fiche</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PLUS QU’UNE CHIPS — STORYTELLING ═══════════════════ -->
+<section class="story section" id="marque">
+  <div class="shell">
+    <header class="section__head">
+      <p class="section__kicker anim" data-anim="up">04 — La marque</p>
+      <h2 class="section__title anim" data-anim="words">Rifkus, c’est plus<br>qu’une chips</h2>
+    </header>
+
+    <div class="story__layout">
+      <figure class="story__media story__media--tall anim" data-anim="card">
+        <img src="assets/img/kv/lifestyle-elka3dus.webp" alt="Deux générations partagent un sachet Rifkus dans la rue" width="597" height="630" loading="lazy">
+        <figcaption>Campagne <strong>Rifkus مع الكعدوس</strong></figcaption>
+      </figure>
+
+      <div class="story__text anim" data-anim="up" data-delay="120">
+        <p class="story__quote">
+          Une marque qui accompagne les moments simples, les pauses entre amis,
+          les soirées et les petits plaisirs du quotidien.
+        </p>
+        <p>
+          Rifkus est née d’une idée simple&nbsp;: un snack algérien qui n’a rien à envier
+          aux grandes marques internationales. Même exigence sur le produit, même
+          audace sur le style — mais avec un accent d’ici.
+        </p>
+        <p>
+          Du vendeur du coin au match du vendredi, le sachet passe de main en main.
+          C’est là que la marque existe vraiment&nbsp;: dans le partage.
+        </p>
+        <ul class="story__points">
+          <li><span aria-hidden="true">✦</span> Produite en Algérie</li>
+          <li><span aria-hidden="true">✦</span> Formats pensés pour le partage</li>
+          <li><span aria-hidden="true">✦</span> Une identité assumée, jeune et populaire</li>
+        </ul>
+      </div>
+
+      <figure class="story__media story__media--wide anim" data-anim="card" data-delay="80">
+        <img src="assets/img/kv/lifestyle-tracteur.webp" alt="Rifkus partagé lors d’une pause de travail à la ferme" width="597" height="630" loading="lazy">
+        <figcaption>Des vrais moments, des vraies pauses</figcaption>
+      </figure>
+
+      <figure class="story__media story__media--sq anim" data-anim="card" data-delay="160">
+        <img src="assets/img/kv/trio-chips.webp" alt="Trois sachets Rifkus posés sur un lit de chips" width="1536" height="1024" loading="lazy">
+        <figcaption>La gamme, au complet</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- Bandeau presse -->
+  <div class="shell">
+    <div class="press anim" data-anim="card">
+      <div class="press__media">
+        <img src="assets/img/kv/presse-algerie360.webp" alt="Reportage Algérie 360 sur le lancement des chips Rifkus" width="1280" height="720" loading="lazy">
+      </div>
+      <div class="press__text">
+        <p class="press__label">Ils en parlent</p>
+        <blockquote>« Rifka, le jeune entrepreneur lance les chips Rifkus »</blockquote>
+        <cite>Algérie 360°</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
+<section class="contact section" id="contact">
+  <div class="shell">
+    <div class="contact__layout">
+      <div class="contact__intro anim" data-anim="up">
+        <p class="section__kicker">05 — Parlons-en</p>
+        <h2 class="section__title">Distributeur,<br>revendeur ou curieux&nbsp;?</h2>
+        <p class="section__lead">
+          Vous voulez référencer Rifkus dans votre point de vente, proposer un partenariat
+          ou simplement nous dire quelle saveur vous manque&nbsp;? Écrivez-nous.
+        </p>
+
+        <ul class="contact__cards">
+          <li>
+            <span class="contact__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+            </span>
+            <div><strong>E-mail</strong><a href="mailto:contact@rifkus.dz">contact@rifkus.dz</a></div>
+          </li>
+          <li>
+            <span class="contact__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            </span>
+            <div><strong>Où nous trouver</strong><span>Chez votre épicier, partout en Algérie</span></div>
+          </li>
+          <li>
+            <span class="contact__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="7.5" width="18" height="12.5" rx="2"/><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5M3 12.5h18"/></svg>
+            </span>
+            <div><strong>Partenariats</strong><span>Distribution, gros &amp; grande surface</span></div>
+          </li>
+        </ul>
+
+        <div class="contact__social">
+          <a href="#" aria-label="Facebook Rifkus" class="social">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V5h-3a4 4 0 0 0-4 4v2H8v3h2v7h3v-7h2.5l.5-3H13V9a1 1 0 0 1 1-1z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram Rifkus" class="social">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="1.2"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok Rifkus" class="social">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4c.5 2.4 2 3.8 4.3 4v3c-1.7 0-3.2-.5-4.3-1.4V15a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v3.1a2.6 2.6 0 1 0 1.8 2.5V4z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact__form anim" data-anim="card" id="contactForm" novalidate>
+        <div class="field">
+          <input type="text" id="cName" name="name" required autocomplete="name" placeholder=" ">
+          <label for="cName">Nom complet</label>
+        </div>
+        <div class="field">
+          <input type="email" id="cEmail" name="email" required autocomplete="email" placeholder=" ">
+          <label for="cEmail">E-mail</label>
+        </div>
+        <div class="field">
+          <input type="tel" id="cPhone" name="phone" autocomplete="tel" placeholder=" ">
+          <label for="cPhone">Téléphone (facultatif)</label>
+        </div>
+        <div class="field">
+          <select id="cSubject" name="subject">
+            <option>Devenir distributeur</option>
+            <option>Référencer Rifkus en magasin</option>
+            <option>Partenariat &amp; sponsoring</option>
+            <option>Une question, une idée</option>
+          </select>
+          <label for="cSubject" class="label--static">Sujet</label>
+        </div>
+        <div class="field field--full">
+          <textarea id="cMessage" name="message" rows="4" required placeholder=" "></textarea>
+          <label for="cMessage">Votre message</label>
+        </div>
+
+        <button class="btn btn--primary btn--lg field--full" type="submit" id="contactSubmit">
+          Envoyer le message
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer class="footer">
+  <div class="shell footer__inner">
+    <div class="footer__brand">
+      <img src="assets/img/logo-rifkus.webp" alt="RIFKUS" width="249" height="226" loading="lazy">
+      <p>Le croustillant qui réunit tout le monde.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Pied de page">
+      <div>
+        <h4>Le site</h4>
+        <a href="#accueil">Accueil</a>
+        <a href="#saveurs">Nos saveurs</a>
+        <a href="#marque">La marque</a>
+      </div>
+      <div>
+        <h4>Les gammes</h4>
+        <a href="#saveurs" data-jump="chips">Potato Chips</a>
+        <a href="#saveurs" data-jump="rings">Crispy Rings</a>
+        <a href="#saveurs" data-jump="puffs">Puffs Corn</a>
+        <a href="#saveurs" data-jump="feu">Édition Feu</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="#contact">Nous écrire</a>
+        <a href="mailto:contact@rifkus.dz">contact@rifkus.dz</a>
+      </div>
+    </nav>
+  </div>
+  <div class="shell footer__bottom">
+    <p>© <span id="year">2026</span> RIFKUS — Tous droits réservés.</p>
+    <!-- drapeau en CSS : les emojis régionaux ne s'affichent pas sous Windows -->
+    <p class="footer__made">Fabriqué en Algérie <span class="flag" aria-hidden="true"></span></p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════ FICHE PRODUIT (MODALE) ═══════════════════════ -->
+<div class="modal" id="flavorModal" role="dialog" aria-modal="true" aria-labelledby="modalName" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel" id="modalPanel">
+    <button class="modal__close" type="button" data-close aria-label="Fermer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="modal__media">
+      <div class="modal__halo" aria-hidden="true"></div>
+      <img id="modalImg" src="" alt="" width="571" height="775">
+    </div>
+    <div class="modal__body">
+      <p class="modal__range" id="modalRange"></p>
+      <h3 class="modal__name" id="modalName"></h3>
+      <p class="modal__desc" id="modalDesc"></p>
+      <dl class="modal__specs">
+        <div><dt>Intensité</dt><dd class="heat" id="modalHeat"></dd></div>
+        <div><dt>Moment idéal</dt><dd id="modalMoment"></dd></div>
+        <div id="modalKcalRow" hidden><dt>Énergie</dt><dd><span id="modalKcal"></span> kcal</dd></div>
+      </dl>
+      <div class="modal__nav">
+        <button type="button" class="btn btn--ghost btn--sm" id="modalPrev">← Précédente</button>
+        <button type="button" class="btn btn--ghost btn--sm" id="modalNext">Suivante →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/hero.js"></script>
+<script src="assets/js/flavors.js"></script>
+<script src="assets/js/mood.js"></script>
+<script src="assets/js/contact.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
