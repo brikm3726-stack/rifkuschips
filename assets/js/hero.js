@@ -21,9 +21,7 @@
     var w = 0, h = 0, dpr = 1;
     var running = false;
 
-    // teintes visibles sur le fond clair : or, rouge, bleu, encre
-    // (le mouvement des particules est inchangé, seule la couleur l'est)
-    var TINTS = ['240,180,0', '228,3,46', '15,95,209', '20,20,15'];
+    var TINTS = ['255,212,0', '255,232,107', '228,3,46', '255,255,255'];
 
     function resize() {
       dpr = Math.min(window.devicePixelRatio || 1, 2);

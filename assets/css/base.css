@@ -19,17 +19,12 @@
   --cream-2:     #F6E9D4;
   --white:       #FFFFFF;
 
-  /* — sémantique (mode clair) —
-     Seule cette couche a basculé du sombre au clair : le fond de page passe
-     du quasi-noir au blanc chaud, le texte à l'encre, les filets au noir
-     translucide. Les couleurs de marque (jaune/bleu/rouge) et toutes les
-     animations restent inchangées. --ink garde sa valeur : il sert d'encre
-     de texte et de tracé d'icônes, jamais de fond de page ici. */
-  --bg:          #FFFDF8;
-  --surface:     #FFFFFF;
-  --text:        #14140F;
-  --text-dim:    rgb(20 20 15 / .60);
-  --line:        rgb(20 20 15 / .12);
+  /* — sémantique (mode sombre par défaut) — */
+  --bg:          var(--ink);
+  --surface:     var(--ink-2);
+  --text:        #F4F1EA;
+  --text-dim:    #A29E97;
+  --line:        rgb(255 255 255 / .09);
 
   /* — rythme — */
   --shell:       1240px;
@@ -136,7 +131,7 @@ h4 { font-family: 'Outfit', sans-serif; }
   font-weight: 700;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: var(--red);   /* le jaune passait mal sur fond clair */
+  color: var(--yellow);
   margin-bottom: 1rem;
 }
 
@@ -207,10 +202,10 @@ h4 { font-family: 'Outfit', sans-serif; }
 .btn--ghost {
   --btn-bg: transparent;
   --btn-fg: var(--text);
-  border: 2px solid rgb(20 20 15 / .28);
+  border: 2px solid rgb(255 255 255 / .22);
   backdrop-filter: blur(6px);
 }
-.btn--ghost:hover { border-color: var(--ink); color: var(--ink); background: rgb(20 20 15 / .05); }
+.btn--ghost:hover { border-color: var(--yellow); color: var(--yellow); }
 .btn--ghost::before { display: none; }
 
 .btn--sm { padding: .7em 1.2em; font-size: .85rem; }
