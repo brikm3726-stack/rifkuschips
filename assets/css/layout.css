@@ -224,55 +224,6 @@ body.is-loading main * { animation-play-state: paused !important; }
   .nav__cta { opacity: 0; transform: translateY(18px); }
 }
 
-/* ═════════════════════════ BANDEAU DÉFILANT ═════════════════════════ */
-
-.marquee {
-  position: relative;
-  z-index: 2;
-  /* le bandeau déborde des deux côtés pour que l'inclinaison ne laisse pas
-     de coin vide ; `html { overflow-x: clip }` se charge du rognage */
-  width: 108%;
-  margin: clamp(-2rem, -3vw, -1rem) 0 0 -4%;
-  padding-block: .25rem;
-  transform: rotate(-1.8deg);
-  background: var(--yellow);
-  border-block: 3px solid var(--ink);
-  box-shadow: var(--shadow-md);
-}
-
-.marquee__row { overflow: hidden; }
-.marquee__row--alt {
-  background: var(--ink);
-  color: var(--yellow);
-  border-top: 3px solid var(--ink);
-}
-
-.marquee__track {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-  width: max-content;
-  padding-block: .45rem;
-  animation: marquee 34s linear infinite;
-}
-.marquee__row--alt .marquee__track { animation-duration: 44s; animation-direction: reverse; }
-
-.marquee__track span {
-  font-family: 'Anton', Impact, sans-serif;
-  font-size: clamp(1.1rem, 2.6vw, 1.7rem);
-  text-transform: uppercase;
-  color: var(--ink);
-  white-space: nowrap;
-}
-.marquee__row--alt .marquee__track span { color: var(--yellow); }
-
-.marquee__track i { font-style: normal; font-size: .8em; color: var(--red); }
-.marquee__row--alt .marquee__track i { color: var(--white); }
-
-@keyframes marquee { to { transform: translateX(-50%); } }
-
-.marquee:hover .marquee__track { animation-play-state: paused; }
-
 /* ══════════════════════════════ FOOTER ══════════════════════════════ */
 
 .footer {
