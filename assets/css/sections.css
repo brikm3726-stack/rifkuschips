@@ -14,9 +14,9 @@
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(90% 70% at 78% 18%, rgb(255 212 0 / .13), transparent 62%),
-    radial-gradient(70% 60% at 12% 88%, rgb(15 95 209 / .16), transparent 66%),
-    var(--ink);
+    radial-gradient(90% 70% at 78% 18%, rgb(255 212 0 / .22), transparent 62%),
+    radial-gradient(70% 60% at 12% 88%, rgb(15 95 209 / .12), transparent 66%),
+    var(--bg);
 }
 
 .hero::after {           /* grain */
@@ -60,8 +60,8 @@
   inset: 0;
   z-index: -1;
   background-image:
-    linear-gradient(rgb(255 255 255 / .035) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255 255 255 / .035) 1px, transparent 1px);
+    linear-gradient(rgb(20 20 15 / .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(20 20 15 / .035) 1px, transparent 1px);
   background-size: 76px 76px;
   mask-image: radial-gradient(80% 70% at 50% 40%, #000 20%, transparent 78%);
   -webkit-mask-image: radial-gradient(80% 70% at 50% 40%, #000 20%, transparent 78%);
@@ -82,7 +82,7 @@
   margin-bottom: 1.2rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgb(255 255 255 / .04);
+  background: rgb(20 20 15 / .04);
   backdrop-filter: blur(8px);
   font-size: .82rem;
   font-weight: 500;
@@ -101,7 +101,7 @@
   position: relative;
   display: inline-block;   /* sinon le soulignement se place n'importe où */
   font-style: normal;
-  color: var(--yellow);
+  color: var(--blue);   /* le jaune passait mal sur fond clair */
   -webkit-text-stroke: 0;
 }
 .hero__title em::after {          /* soulignement tracé à la main */
@@ -123,7 +123,7 @@
   color: var(--text-dim);
   margin-bottom: 1.8rem;
 }
-.hero__sub strong { color: var(--yellow); font-weight: 700; }
+.hero__sub strong { color: var(--red); font-weight: 700; }
 
 .hero__actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-bottom: 2rem; }
 
@@ -145,7 +145,7 @@
   font-family: 'Anton', Impact, sans-serif;
   font-size: clamp(1.8rem, 3.4vw, 2.5rem);
   line-height: 1;
-  color: var(--yellow);
+  color: var(--red);
 }
 
 /* — la scène produit — */
@@ -234,7 +234,7 @@
   left: 50%; bottom: 3rem;
   transform: translateX(-50%);
   width: 26px; height: 42px;
-  border: 2px solid rgb(255 255 255 / .22);
+  border: 2px solid rgb(20 20 15 / .22);
   border-radius: 999px;
   display: grid;
   justify-items: center;
@@ -243,7 +243,7 @@
 .hero__scroll span {
   width: 4px; height: 8px;
   border-radius: 999px;
-  background: var(--yellow);
+  background: var(--red);
   animation: scrollDot 1.9s var(--ease) infinite;
 }
 @keyframes scrollDot {
@@ -277,8 +277,8 @@
 
 .flavors {
   background:
-    radial-gradient(60% 45% at 82% 8%, rgb(15 95 209 / .12), transparent 65%),
-    var(--ink);
+    radial-gradient(60% 45% at 82% 8%, rgb(15 95 209 / .1), transparent 65%),
+    var(--bg);
 }
 
 .filters {
@@ -292,13 +292,13 @@
   padding: .6rem 1.15rem;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: rgb(255 255 255 / .03);
+  background: rgb(20 20 15 / .03);
   color: var(--text-dim);
   font-size: .88rem;
   font-weight: 600;
   transition: color .3s, background .3s, border-color .3s, transform .3s var(--ease);
 }
-.filter:hover { color: var(--text); border-color: rgb(255 255 255 / .25); transform: translateY(-2px); }
+.filter:hover { color: var(--text); border-color: rgb(20 20 15 / .25); transform: translateY(-2px); }
 .filter.is-active {
   background: var(--yellow);
   border-color: var(--yellow);
@@ -319,22 +319,22 @@
   min-height: 430px;
   padding: 1.5rem;
   border-radius: var(--r-lg);
-  border: 1px solid rgb(255 255 255 / .08);
-  background: var(--ink-2);
+  border: 1px solid rgb(20 20 15 / .08);
+  background: var(--surface);
   overflow: hidden;
   isolation: isolate;
   cursor: pointer;
+  box-shadow: 0 12px 30px -22px rgb(20 20 15 / .5);
   transition: transform .5s var(--ease), border-color .4s, box-shadow .5s var(--ease);
 }
 
+/* lavis de couleur de la saveur, monté du bas : un blanc teinté, jamais sombre */
 .flavor-card__bg {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background:
-    radial-gradient(85% 60% at 50% 108%, var(--f), transparent 72%),
-    linear-gradient(180deg, transparent 30%, color-mix(in srgb, var(--f-deep) 70%, transparent));
-  opacity: .5;
+  background: radial-gradient(90% 62% at 50% 112%, var(--f), transparent 74%);
+  opacity: .32;
   transition: opacity .5s var(--ease), transform .7s var(--ease);
 }
 
@@ -342,7 +342,7 @@
   position: absolute;
   inset: -40% -10%;
   z-index: -1;
-  background: linear-gradient(104deg, transparent 42%, rgb(255 255 255 / .16) 50%, transparent 58%);
+  background: linear-gradient(104deg, transparent 42%, rgb(255 255 255 / .5) 50%, transparent 58%);
   transform: translateX(-60%);
   opacity: 0;
   transition: transform .9s var(--ease), opacity .4s;
@@ -353,9 +353,9 @@
 .flavor-card:focus-within {
   transform: translateY(-10px);
   border-color: color-mix(in srgb, var(--f) 55%, transparent);
-  box-shadow: 0 30px 60px -26px color-mix(in srgb, var(--f) 60%, transparent), var(--shadow-md);
+  box-shadow: 0 30px 60px -26px color-mix(in srgb, var(--f) 55%, transparent), var(--shadow-md);
 }
-.flavor-card:hover .flavor-card__bg { opacity: .95; transform: scale(1.06); }
+.flavor-card:hover .flavor-card__bg { opacity: .62; transform: scale(1.06); }
 .flavor-card:hover .flavor-card__shine { transform: translateX(60%); opacity: 1; }
 
 .flavor-card__badge {
@@ -412,7 +412,7 @@
   font-weight: 700;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--f) 75%, white);
+  color: color-mix(in srgb, var(--f) 62%, var(--ink));   /* assez foncé pour le fond clair */
   margin-bottom: .4rem;
 }
 .flavor-card__name { font-size: 1.75rem; margin-bottom: .5rem; }
@@ -784,9 +784,9 @@
 
 .contact {
   background:
-    radial-gradient(60% 50% at 15% 10%, rgb(15 95 209 / .16), transparent 62%),
-    radial-gradient(50% 45% at 90% 85%, rgb(255 212 0 / .1), transparent 66%),
-    var(--ink);
+    radial-gradient(60% 50% at 15% 10%, rgb(15 95 209 / .1), transparent 62%),
+    radial-gradient(50% 45% at 90% 85%, rgb(255 212 0 / .16), transparent 66%),
+    var(--bg);
 }
 
 .contact__layout {
@@ -804,13 +804,13 @@
   padding: 1rem 1.2rem;
   border-radius: var(--r-md);
   border: 1px solid var(--line);
-  background: rgb(255 255 255 / .03);
+  background: rgb(20 20 15 / .03);
   transition: border-color .3s, transform .35s var(--ease), background .3s;
 }
-.contact__cards li:hover { border-color: rgb(255 212 0 / .4); transform: translateX(4px); background: rgb(255 255 255 / .05); }
+.contact__cards li:hover { border-color: rgb(255 212 0 / .4); transform: translateX(4px); background: rgb(20 20 15 / .05); }
 .contact__cards strong { display: block; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: .1rem; }
 .contact__cards a, .contact__cards span:not(.contact__ico) { font-weight: 600; }
-.contact__cards a:hover { color: var(--yellow); }
+.contact__cards a:hover { color: var(--red); }
 
 .contact__ico {
   flex: none;
@@ -830,7 +830,7 @@
   display: grid; place-items: center;
   border-radius: 50%;
   border: 1px solid var(--line);
-  background: rgb(255 255 255 / .04);
+  background: rgb(20 20 15 / .04);
   transition: background .3s, color .3s, transform .35s var(--ease);
 }
 .social:hover { background: var(--yellow); color: var(--ink); transform: translateY(-4px) rotate(-6deg); }
@@ -845,7 +845,7 @@
   padding: clamp(1.4rem, 3vw, 2.2rem);
   border-radius: var(--r-lg);
   border: 1px solid var(--line);
-  background: rgb(255 255 255 / .035);
+  background: rgb(20 20 15 / .035);
   backdrop-filter: blur(12px);
 }
 .field--full, .contact__form > .btn { grid-column: 1 / -1; }
@@ -857,19 +857,19 @@
   padding: 1.35rem .95rem .55rem;
   border-radius: var(--r-sm);
   border: 1px solid var(--line);
-  background: rgb(255 255 255 / .04);
+  background: rgb(20 20 15 / .04);
   color: var(--text);
   transition: border-color .3s, background .3s, box-shadow .3s;
 }
 .field textarea { resize: vertical; min-height: 118px; }
 .field select { padding-top: 1.45rem; appearance: none; cursor: pointer; }
-.field select option { background: var(--ink-2); color: var(--text); }
+.field select option { background: var(--surface); color: var(--text); }
 
-.field input:hover, .field textarea:hover, .field select:hover { border-color: rgb(255 255 255 / .22); }
+.field input:hover, .field textarea:hover, .field select:hover { border-color: rgb(20 20 15 / .22); }
 .field input:focus, .field textarea:focus, .field select:focus {
   outline: none;
   border-color: var(--yellow);
-  background: rgb(255 255 255 / .06);
+  background: rgb(20 20 15 / .06);
   box-shadow: 0 0 0 3px rgb(255 212 0 / .16);
 }
 
@@ -888,7 +888,7 @@
 .field textarea:not(:placeholder-shown) + label,
 .field label.label--static {
   transform: translateY(-.62rem) scale(.78);
-  color: var(--yellow);
+  color: var(--red);
 }
 
 .field.is-invalid input,

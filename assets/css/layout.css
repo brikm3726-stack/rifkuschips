@@ -11,7 +11,7 @@
   z-index: 300;
   display: grid;
   place-items: center;
-  background: var(--ink);
+  background: var(--bg);
   transition: opacity .6s var(--ease), visibility .6s;
 }
 .preloader::after {
@@ -43,7 +43,7 @@
   font-size: clamp(.9rem, 3.2vw, 1.35rem);
   letter-spacing: .34em;
   text-transform: uppercase;
-  color: var(--yellow);
+  color: var(--ink);   /* lisible sur l'écran d'ouverture clair */
   padding-left: .34em;
 }
 .preloader__word span {
@@ -59,7 +59,7 @@
   width: min(220px, 46vw);
   height: 3px;
   border-radius: 999px;
-  background: rgb(255 255 255 / .12);
+  background: rgb(20 20 15 / .12);
   overflow: hidden;
 }
 .preloader__bar i {
@@ -99,12 +99,12 @@ body.is-loading main * { animation-play-state: paused !important; }
 }
 
 .nav.is-stuck {
-  /* assez opaque pour rester lisible au-dessus des sections crème */
-  background: rgb(10 10 14 / .82);
+  /* verre clair, assez opaque pour rester lisible au-dessus de tout */
+  background: rgb(255 253 248 / .82);
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
   border-bottom-color: var(--line);
-  box-shadow: 0 12px 40px -24px rgb(0 0 0 / .9);
+  box-shadow: 0 12px 40px -24px rgb(0 0 0 / .28);
 }
 
 .nav__inner {
@@ -162,7 +162,7 @@ body.is-loading main * { animation-play-state: paused !important; }
   width: 44px; height: 44px;
   border-radius: 12px;
   border: 1px solid var(--line);
-  background: rgb(255 255 255 / .04);
+  background: rgb(20 20 15 / .04);
   padding: 12px 11px;
   flex-direction: column;
   justify-content: space-between;
@@ -190,7 +190,7 @@ body.is-loading main * { animation-play-state: paused !important; }
     flex-direction: column;
     align-items: stretch;
     gap: .25rem;
-    background: rgb(10 10 14 / .96);
+    background: rgb(255 253 248 / .97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--line);
@@ -217,7 +217,7 @@ body.is-loading main * { animation-play-state: paused !important; }
                 transform .5s var(--ease) calc(.08s + var(--i, 0) * .05s);
   }
   .nav__link::after { display: none; }
-  .nav__link.is-active { color: var(--yellow); }
+  .nav__link.is-active { color: var(--red); }
 
   .nav__cta { margin: 1.2rem 0 0; justify-content: center; }
   .nav__links.is-open .nav__cta { opacity: 1; transform: none; transition-delay: .38s; }
@@ -277,7 +277,7 @@ body.is-loading main * { animation-play-state: paused !important; }
 
 .footer {
   position: relative;
-  background: var(--ink-2);
+  background: var(--cream-2);   /* légèrement teinté pour se détacher de la page */
   border-top: 1px solid var(--line);
   padding-top: clamp(3rem, 6vw, 5rem);
   overflow: hidden;
@@ -290,7 +290,7 @@ body.is-loading main * { animation-play-state: paused !important; }
   font-family: 'Anton', Impact, sans-serif;
   font-size: clamp(6rem, 24vw, 20rem);
   line-height: .8;
-  color: rgb(255 255 255 / .028);
+  color: rgb(20 20 15 / .05);
   pointer-events: none;
   user-select: none;
   white-space: nowrap;
@@ -323,7 +323,7 @@ body.is-loading main * { animation-play-state: paused !important; }
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--yellow);
+  color: var(--red);
   margin-bottom: .9rem;
 }
 .footer__nav a {
@@ -385,10 +385,10 @@ body.is-loading main * { animation-play-state: paused !important; }
   overflow: auto;
   padding: clamp(1.5rem, 4vw, 2.75rem);
   border-radius: var(--r-lg);
-  border: 1px solid rgb(255 255 255 / .1);
+  border: 1px solid rgb(20 20 15 / .1);
   background:
-    radial-gradient(120% 90% at 15% 0%, color-mix(in srgb, var(--f, var(--yellow)) 30%, transparent), transparent 60%),
-    var(--ink-2);
+    radial-gradient(120% 90% at 15% 0%, color-mix(in srgb, var(--f, var(--yellow)) 22%, transparent), transparent 60%),
+    var(--surface);
   box-shadow: var(--shadow-lg);
   opacity: 0;
   transform: translateY(24px) scale(.96);
@@ -405,7 +405,7 @@ body.is-loading main * { animation-play-state: paused !important; }
   place-items: center;
   border-radius: 50%;
   border: 1px solid var(--line);
-  background: rgb(255 255 255 / .07);
+  background: rgb(20 20 15 / .07);
   transition: background .25s, transform .3s var(--ease);
 }
 .modal__close:hover { background: var(--yellow); color: var(--ink); transform: rotate(90deg); }
