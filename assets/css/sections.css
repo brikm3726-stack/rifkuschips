@@ -694,8 +694,17 @@
 
 .story__media--tall { grid-column: span 5; aspect-ratio: 4/5; }
 .story__text        { grid-column: span 7; padding-left: clamp(0rem, 1.5vw, 1.5rem); }
-.story__media--wide { grid-column: span 7; aspect-ratio: 16/10; }
-.story__media--sq   { grid-column: span 5; aspect-ratio: 5/4; }
+
+/* Visuel de campagne affiché EN ENTIER : aucun format imposé, le cadre prend
+   la hauteur naturelle de l'image — donc zéro recadrage, y compris au survol.
+   Il occupe la colonne étroite car l'image est presque carrée. */
+.story__media--full { grid-column: span 5; }
+.story__media--full img { height: auto; object-fit: contain; }
+.story__media--full:hover img { transform: none; }
+
+/* la photo de gamme est panoramique : colonne large, format 3/2 d'origine,
+   ce qui aligne les deux hauteurs et ne laisse aucun vide dans la grille */
+.story__media--wide { grid-column: span 7; aspect-ratio: 3/2; }
 
 .story__quote {
   font-family: 'Anton', Impact, sans-serif;
@@ -723,8 +732,8 @@
 @media (max-width: 860px) {
   .story__media--tall,
   .story__text,
-  .story__media--wide,
-  .story__media--sq { grid-column: span 12; }
+  .story__media--full,
+  .story__media--wide { grid-column: span 12; }
   .story__media--tall { aspect-ratio: 5/4; }
   .story__text { padding-left: 0; }
 }
