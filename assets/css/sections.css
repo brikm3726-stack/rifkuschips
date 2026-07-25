@@ -15,22 +15,7 @@
   padding-block: clamp(6.5rem, 13vh, 8.5rem) clamp(3rem, 7vh, 5rem);
   overflow: hidden;
   isolation: isolate;
-  background:
-    linear-gradient(180deg, rgb(10 10 14 / .6) 0%, transparent 16%),
-    linear-gradient(90deg, rgb(10 10 14 / .82) 0%, rgb(10 10 14 / .48) 48%, rgb(10 10 14 / .22) 72%),
-    linear-gradient(0deg, rgb(10 10 14 / .92) 0%, rgb(10 10 14 / .15) 32%, transparent 55%),
-    url('../img/kv/hero-bg.jpg') center 60% / cover no-repeat;
-}
-
-.hero::after {           /* grain */
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--noise);
-  opacity: .5;
-  mix-blend-mode: overlay;
-  pointer-events: none;
+  background: url('../img/kv/hero-bg.jpg') center 60% / cover no-repeat;
 }
 
 .hero__grid-lines {
@@ -51,6 +36,9 @@
    recentre au milieu de l'écran au lieu de rester sous le logo. */
 .hero__copy {
   max-width: 28rem;
+  /* la photo est laissée intacte (pas de voile assombri) : c'est le texte
+     qui porte sa propre ombre pour rester lisible sur le ciel clair */
+  text-shadow: 0 2px 10px rgb(0 0 0 / .5), 0 1px 4px rgb(0 0 0 / .45);
 }
 
 .hero__eyebrow {
@@ -59,14 +47,14 @@
   gap: .6rem;
   padding: .45rem .9rem;
   margin-bottom: 1rem;
-  border: 1px solid var(--line);
+  border: 1px solid rgb(255 255 255 / .18);
   border-radius: 999px;
-  background: rgb(255 255 255 / .04);
+  background: rgb(10 10 14 / .38);
   backdrop-filter: blur(8px);
   font-size: .76rem;
   font-weight: 500;
   letter-spacing: .04em;
-  color: var(--text-dim);
+  color: var(--text);
 }
 
 .hero__title {
@@ -165,22 +153,12 @@
 
 .pack-band {
   position: relative;
-  padding-block: clamp(3rem, 8vw, 5.5rem);
-  background: var(--ink);
+  padding-block: clamp(3.5rem, 9vw, 6.5rem);
+  /* photo de plateau en bois : les sachets détourés s'y posent naturellement,
+     au lieu de flotter sur l'aplat noir de la page */
+  background: url('../img/kv/pack-band-bg.jpg') center / cover no-repeat;
   overflow: hidden;
   isolation: isolate;
-}
-
-.pack-band__glow {
-  position: absolute;
-  z-index: -1;
-  top: 50%; left: 50%;
-  translate: -50% -50%;
-  width: min(90vw, 1100px);
-  aspect-ratio: 2.2 / 1;
-  background: radial-gradient(ellipse, rgb(255 212 0 / .1), transparent 70%);
-  filter: blur(40px);
-  pointer-events: none;
 }
 
 .pack-band__grid {
@@ -194,12 +172,22 @@
   display: grid;
   place-items: center;
 }
+/* les trois PNG sont recadrés au ras du sachet et ont des proportions quasi
+   identiques : une largeur commune suffit à les aligner sur le plateau */
 .pack-band__item img {
-  width: min(100%, 240px);
+  width: min(100%, 215px);
   height: auto;
-  filter: drop-shadow(0 30px 40px rgb(0 0 0 / .55));
+  filter: drop-shadow(0 22px 26px rgb(0 0 0 / .55));
 }
-.pack-band__item--mid img { width: min(100%, 268px); }
+
+/* flottement continu, identique et synchronisé sur les trois sachets :
+   1 s pour monter, 1 s pour redescendre, sans décalage entre eux — il tourne
+   en permanence, que la page défile ou non. */
+@keyframes packFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg)); }
+  50%      { transform: translate3d(0, -18px, 0) rotate(var(--rot, 0deg)); }
+}
+.pack-float { animation: packFloat 2s ease-in-out infinite; }
 
 @media (max-width: 700px) {
   .pack-band__grid { grid-template-columns: 1fr; justify-items: center; gap: 2.5rem; }
@@ -377,6 +365,96 @@
 .flavor-card.is-hidden { display: none; }
 
 .flavors__empty { text-align: center; color: var(--text-dim); padding-block: 3rem; }
+
+/* ══════════════════════ PETIT JEU — TROUVE LE SACHET ══════════════════════ */
+
+.hide-game {
+  background:
+    radial-gradient(55% 50% at 18% 85%, rgb(228 3 46 / .1), transparent 65%),
+    var(--ink);
+}
+.hide-game .section__kicker { color: var(--red); }
+
+.hide-game__panel {
+  max-width: 34rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.hide-game__status {
+  min-height: 1.6em;
+  margin-bottom: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 600;
+}
+.hide-game__status strong { color: var(--yellow); }
+
+.hide-game__board {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1rem, 4vw, 2rem);
+  margin-bottom: 1.8rem;
+}
+
+.hide-game__slot {
+  width: clamp(92px, 24vw, 140px);
+  aspect-ratio: 1;
+  background: none;
+  perspective: 1400px;
+  transition: transform .4s var(--ease);
+}
+.hide-game__slot:not(:disabled):hover { transform: translateY(-6px); }
+.hide-game__slot:disabled { cursor: default; }
+
+.hide-game__crate {
+  position: relative;
+  display: block;
+  width: 100%; height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .6s var(--ease);
+}
+.hide-game__crate.is-open { transform: rotateY(180deg); }
+
+.hide-game__face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: var(--r-md);
+  backface-visibility: hidden;
+  box-shadow: var(--shadow-md);
+}
+.hide-game__face--lid {
+  background: repeating-linear-gradient(90deg, #B9793F 0 14px, #A5672F 14px 16px);
+  border: 3px solid #7A4C22;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: 2.2rem;
+  color: rgb(255 255 255 / .45);
+}
+.hide-game__face--pack {
+  flex-direction: column;
+  gap: .3rem;
+  padding: .6rem;
+  background: var(--ink-2);
+  border: 3px solid var(--line);
+  transform: rotateY(180deg);
+}
+.hide-game__face--pack img { width: 68%; height: auto; filter: drop-shadow(0 8px 14px rgb(0 0 0 / .5)); }
+.hide-game__face--pack em {
+  font-style: normal;
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+
+.hide-game__slot.is-correct .hide-game__face--pack { border-color: #2FAE66; box-shadow: 0 0 0 4px rgb(47 174 102 / .25); }
+.hide-game__slot.is-wrong .hide-game__face--pack   { border-color: var(--red); box-shadow: 0 0 0 4px rgb(228 3 46 / .2); }
+
+@keyframes crateShuffle {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  25%      { transform: translateX(-8px) rotate(-4deg); }
+  75%      { transform: translateX(8px) rotate(4deg); }
+}
+.hide-game__slot.is-shuffling .hide-game__crate { animation: crateShuffle .5s ease-in-out; }
 
 /* ═══════════════════════════ POURQUOI RIFKUS ═══════════════════════════ */
 

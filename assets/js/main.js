@@ -36,6 +36,7 @@
 
     R.revealAll();
     R.initCounters();
+    R.initHideGame();
 
     var pre = document.getElementById('preloader');
     if (pre) setTimeout(function () { pre.remove(); }, 800);

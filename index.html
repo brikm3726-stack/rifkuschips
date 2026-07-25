@@ -123,23 +123,64 @@
 
 <!-- ═════════════════ TRANSITION — TROIS SACHETS ═════════════════ -->
 <section class="pack-band" aria-label="Nos gammes de sachets Rifkus">
-  <div class="pack-band__glow" aria-hidden="true"></div>
   <div class="shell pack-band__grid">
-    <figure class="pack-band__item anim" data-anim="pop" data-delay="0" style="--rot:-7deg">
-      <img class="float" style="--rot:-7deg; --float-dur:7.5s"
+    <!-- `--rot` est porté par l'image seule : sur la figure il s'ajouterait à la
+         rotation de l'animation d'entrée et doublerait l'inclinaison -->
+    <figure class="pack-band__item anim" data-anim="pop" data-delay="0">
+      <img class="pack-float" style="--rot:-7deg"
            src="assets/img/packs/pnj-1.png"
-           alt="Sachet Rifkus Chips Ball Puffs Corn — saveur Cheese" width="900" height="900" loading="lazy">
+           alt="Sachet Rifkus Chips Ball Puffs Corn — saveur Cheese" width="597" height="821" loading="lazy">
     </figure>
-    <figure class="pack-band__item pack-band__item--mid anim" data-anim="pop" data-delay="160" style="--rot:4deg">
-      <img class="float" style="--rot:4deg; --float-dur:8.2s; --float-delay:.3s"
+    <figure class="pack-band__item pack-band__item--mid anim" data-anim="pop" data-delay="160">
+      <img class="pack-float" style="--rot:4deg"
            src="assets/img/packs/pnj-2.png"
-           alt="Sachet Rifkus Chips Ball Puffs Corn — saveur Beef &amp; Cheddar" width="675" height="900" loading="lazy">
+           alt="Sachet Rifkus Chips Ball Puffs Corn — saveur Beef &amp; Cheddar" width="640" height="854" loading="lazy">
     </figure>
-    <figure class="pack-band__item anim" data-anim="pop" data-delay="320" style="--rot:-3deg">
-      <img class="float" style="--rot:-3deg; --float-dur:6.8s; --float-delay:.6s"
+    <figure class="pack-band__item anim" data-anim="pop" data-delay="320">
+      <img class="pack-float" style="--rot:-3deg"
            src="assets/img/packs/pnj-3.png"
-           alt="Sachet Rifkus Potato Chips — saveur Ketchup" width="720" height="900" loading="lazy">
+           alt="Sachet Rifkus Potato Chips — saveur Ketchup" width="650" height="884" loading="lazy">
     </figure>
+  </div>
+</section>
+
+<!-- ═════════════════════ PETIT JEU — TROUVE LE SACHET ═════════════════════ -->
+<section class="hide-game section" id="jeu">
+  <div class="shell">
+    <header class="section__head section__head--center">
+      <p class="section__kicker anim" data-anim="up">Petit jeu</p>
+      <h2 class="section__title anim" data-anim="words">Trouve le sachet caché</h2>
+      <p class="section__lead anim" data-anim="up" data-delay="80">
+        Mémorise la place du sachet indiqué, on mélange les caisses… à toi de le retrouver.
+      </p>
+    </header>
+
+    <div class="hide-game__panel anim" data-anim="card" data-delay="120">
+      <p class="hide-game__status" id="gameStatus">Mémorise bien…</p>
+
+      <div class="hide-game__board" id="gameBoard">
+        <button type="button" class="hide-game__slot" data-slot="0">
+          <span class="hide-game__crate">
+            <span class="hide-game__face hide-game__face--lid">?</span>
+            <span class="hide-game__face hide-game__face--pack"><img src="" alt=""><em></em></span>
+          </span>
+        </button>
+        <button type="button" class="hide-game__slot" data-slot="1">
+          <span class="hide-game__crate">
+            <span class="hide-game__face hide-game__face--lid">?</span>
+            <span class="hide-game__face hide-game__face--pack"><img src="" alt=""><em></em></span>
+          </span>
+        </button>
+        <button type="button" class="hide-game__slot" data-slot="2">
+          <span class="hide-game__crate">
+            <span class="hide-game__face hide-game__face--lid">?</span>
+            <span class="hide-game__face hide-game__face--pack"><img src="" alt=""><em></em></span>
+          </span>
+        </button>
+      </div>
+
+      <button type="button" class="btn btn--ghost hide-game__replay" id="gameReplay" hidden>Rejouer</button>
+    </div>
   </div>
 </section>
 
@@ -670,6 +711,7 @@
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/flavors.js"></script>
 <script src="assets/js/mood.js"></script>
+<script src="assets/js/game.js"></script>
 <script src="assets/js/contact.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
