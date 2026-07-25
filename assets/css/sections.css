@@ -45,9 +45,11 @@
   -webkit-mask-image: radial-gradient(80% 70% at 50% 40%, #000 20%, transparent 78%);
 }
 
-/* colonne unique, resserrée à gauche sous le logo : la photo pleine page
-   reste bien visible sur toute la moitié droite de l'écran */
-.hero__inner {
+/* `.hero__inner` garde la largeur pleine du `.shell` (donc le même repère de
+   gauche que le logo dans la nav) ; c'est `.hero__copy` qui est resserré,
+   sans le `margin-inline: auto` du shell — sinon la colonne réduite se
+   recentre au milieu de l'écran au lieu de rester sous le logo. */
+.hero__copy {
   max-width: 28rem;
 }
 
