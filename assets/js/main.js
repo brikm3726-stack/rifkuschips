@@ -36,8 +36,6 @@
 
     R.revealAll();
     R.initCounters();
-    R.initParticles();
-    R.initHeroParallax();
 
     var pre = document.getElementById('preloader');
     if (pre) setTimeout(function () { pre.remove(); }, 800);

@@ -217,6 +217,8 @@ h4 { font-family: 'Outfit', sans-serif; }
 
 .anim[data-anim='up']   { transform: translateY(28px); }
 .anim[data-anim='card'] { transform: translateY(40px) scale(.97); }
+/* sachet miniature qui grandit jusqu'à sa taille normale à l'entrée dans l'écran */
+.anim[data-anim='pop']  { transform: translateY(50px) scale(.3) rotate(var(--rot, 0deg)); }
 
 .anim.is-in {
   opacity: 1;

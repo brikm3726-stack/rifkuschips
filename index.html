@@ -21,7 +21,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/img/packs/chips-trois-fromages.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/kv/hero-bg.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/base.css">
@@ -83,9 +83,6 @@
 
 <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
 <section class="hero" id="accueil">
-  <div class="hero__chips" aria-hidden="true"></div>
-  <canvas class="hero__particles" id="heroParticles" aria-hidden="true"></canvas>
-  <div class="hero__glow" aria-hidden="true"></div>
   <div class="hero__grid-lines" aria-hidden="true"></div>
 
   <div class="shell hero__inner">
@@ -117,36 +114,33 @@
         <div><dt>Croustillant</dt><dd><span class="count" data-count="100">100</span>%</dd></div>
       </dl>
     </div>
-
-    <div class="hero__stage" id="heroStage">
-      <div class="hero__halo" aria-hidden="true"></div>
-      <div class="hero__ring" aria-hidden="true"></div>
-
-      <img class="hero__pack hero__pack--main" data-depth="14"
-           src="assets/img/packs/chips-trois-fromages.webp"
-           alt="Sachet Rifkus Potato Chips Three Cheese" width="610" height="825" fetchpriority="high">
-
-      <img class="hero__pack hero__pack--a float" data-depth="34"
-           src="assets/img/packs/harissa.webp"
-           alt="Sachet Rifkus Harissa" width="332" height="444" loading="lazy">
-
-      <img class="hero__pack hero__pack--b float" data-depth="26"
-           src="assets/img/packs/puffs-beef-cheddar.webp"
-           alt="Sachet Rifkus Puffs Corn Beef &amp; Cheddar" width="521" height="743" loading="lazy">
-
-      <img class="hero__pack hero__pack--c float" data-depth="44"
-           src="assets/img/packs/rings-pizza.webp"
-           alt="Sachet Rifkus Crispy Rings saveur Pizza" width="482" height="645" loading="lazy">
-
-      <img class="hero__pack hero__pack--d float" data-depth="20"
-           src="assets/img/packs/puffs-fromage.webp"
-           alt="Sachet Rifkus Puffs Corn Fromage" width="571" height="775" loading="lazy">
-    </div>
   </div>
 
   <a class="hero__scroll" href="#saveurs" aria-label="Faire défiler">
     <span></span>
   </a>
+</section>
+
+<!-- ═════════════════ TRANSITION — TROIS SACHETS ═════════════════ -->
+<section class="pack-band" aria-label="Nos gammes de sachets Rifkus">
+  <div class="pack-band__glow" aria-hidden="true"></div>
+  <div class="shell pack-band__grid">
+    <figure class="pack-band__item anim" data-anim="pop" data-delay="0" style="--rot:-7deg">
+      <img class="float" style="--rot:-7deg; --float-dur:7.5s"
+           src="assets/img/packs/pnj-1.png"
+           alt="Sachet Rifkus Chips Ball Puffs Corn — saveur Cheese" width="900" height="900" loading="lazy">
+    </figure>
+    <figure class="pack-band__item pack-band__item--mid anim" data-anim="pop" data-delay="160" style="--rot:4deg">
+      <img class="float" style="--rot:4deg; --float-dur:8.2s; --float-delay:.3s"
+           src="assets/img/packs/pnj-2.png"
+           alt="Sachet Rifkus Chips Ball Puffs Corn — saveur Beef &amp; Cheddar" width="675" height="900" loading="lazy">
+    </figure>
+    <figure class="pack-band__item anim" data-anim="pop" data-delay="320" style="--rot:-3deg">
+      <img class="float" style="--rot:-3deg; --float-dur:6.8s; --float-delay:.6s"
+           src="assets/img/packs/pnj-3.png"
+           alt="Sachet Rifkus Potato Chips — saveur Ketchup" width="720" height="900" loading="lazy">
+    </figure>
+  </div>
 </section>
 
 <!-- ═════════════════════════════ NOS SAVEURS ═════════════════════════════ -->
@@ -674,7 +668,6 @@
 
 <script src="assets/js/ui.js"></script>
 <script src="assets/js/nav.js"></script>
-<script src="assets/js/hero.js"></script>
 <script src="assets/js/flavors.js"></script>
 <script src="assets/js/mood.js"></script>
 <script src="assets/js/contact.js"></script>
