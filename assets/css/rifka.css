@@ -1,0 +1,254 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   RIFKUS — page Rifka (le fondateur)
+   Réutilise les jetons et composants du site ; styles propres à la page.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.page-rifka { padding-top: 0; }
+
+/* la navbar est fixe : on décale le contenu pour ne pas passer dessous */
+.page-rifka main { padding-top: clamp(4.5rem, 8vw, 6rem); }
+
+/* ═════════════════════════════════ HERO ═════════════════════════════════ */
+
+.rifka-hero {
+  position: relative;
+  padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3.5rem, 8vw, 6rem);
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(70% 60% at 82% 15%, rgb(0 122 61 / .16), transparent 62%),
+    radial-gradient(60% 55% at 10% 90%, rgb(228 3 46 / .12), transparent 66%),
+    var(--ink);
+}
+.rifka-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--noise);
+  opacity: .5;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.rifka-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.rifka-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .5rem 1rem;
+  margin-bottom: 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgb(255 255 255 / .04);
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--text-dim);
+}
+
+.rifka-hero__title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: .92;
+  margin-bottom: 1.4rem;
+}
+.rifka-hero__title em {
+  font-style: normal;
+  color: var(--yellow);
+}
+
+.rifka-hero__sub {
+  max-width: 36rem;
+  color: var(--text-dim);
+  font-size: clamp(1.02rem, 1vw + .78rem, 1.2rem);
+  margin-bottom: 1.8rem;
+}
+
+.rifka-facts {
+  display: grid;
+  gap: .8rem;
+  margin-bottom: 2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+}
+.rifka-facts > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .3rem 1rem;
+}
+.rifka-facts dt {
+  min-width: 12rem;
+  font-size: .74rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.rifka-facts dd { font-weight: 600; }
+
+.rifka-hero__actions { display: flex; flex-wrap: wrap; gap: .85rem; }
+
+/* — le portrait — */
+
+.rifka-hero__photo {
+  position: relative;
+  margin: 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / .1);
+  box-shadow: var(--shadow-lg);
+  rotate: 1.5deg;
+  transition: rotate .6s var(--ease), transform .6s var(--ease);
+}
+.rifka-hero__photo::before {        /* liseré aux couleurs du drapeau */
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(150deg, #007A3D, var(--yellow) 55%, var(--red));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: .8;
+  pointer-events: none;
+}
+.rifka-hero__photo:hover { rotate: 0deg; transform: translateY(-4px); }
+.rifka-hero__photo img { width: 100%; height: auto; display: block; }
+.rifka-hero__photo figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 3;
+  padding: 2.6rem 1.2rem .9rem;
+  background: linear-gradient(transparent, rgb(5 5 8 / .85));
+  font-size: .84rem;
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .rifka-hero__inner { grid-template-columns: 1fr; }
+  .rifka-hero__copy { order: 2; text-align: center; }
+  .rifka-hero__photo { order: 1; width: min(100%, 460px); margin-inline: auto; }
+  .rifka-hero__eyebrow, .rifka-hero__actions { justify-content: center; }
+  .rifka-hero__sub { margin-inline: auto; }
+  .rifka-facts { justify-items: center; }
+  .rifka-facts > div { justify-content: center; }
+  .rifka-facts dt { min-width: 0; }
+}
+
+/* ═════════════════════════════ BIOGRAPHIE ═════════════════════════════ */
+
+.rifka-bio { background: var(--ink); }
+
+.rifka-bio__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.rifka-step {
+  position: relative;
+  padding: clamp(1.6rem, 3vw, 2.2rem);
+  border-radius: var(--r-lg);
+  border: 1px solid rgb(255 255 255 / .08);
+  background: var(--ink-2);
+  overflow: hidden;
+  transition: transform .5s var(--ease), border-color .4s, box-shadow .5s var(--ease);
+}
+.rifka-step::before {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--yellow), var(--red));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .6s var(--ease);
+}
+.rifka-step:hover {
+  transform: translateY(-8px);
+  border-color: rgb(255 212 0 / .35);
+  box-shadow: var(--shadow-md);
+}
+.rifka-step:hover::before { transform: scaleX(1); }
+
+.rifka-step__num {
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--yellow);
+  opacity: .9;
+}
+.rifka-step h3 { font-size: 1.3rem; margin: .8rem 0 .5rem; }
+.rifka-step p { color: var(--text-dim); font-size: .95rem; text-wrap: pretty; }
+.rifka-step em { font-style: italic; color: var(--text); }
+.rifka-step strong { color: var(--yellow); }
+
+/* ══════════════════════════════ CITATION ══════════════════════════════ */
+
+.rifka-quote {
+  background:
+    radial-gradient(60% 120% at 50% 0%, rgb(255 212 0 / .1), transparent 60%),
+    var(--ink-2);
+  border-block: 1px solid var(--line);
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+.rifka-quote blockquote {
+  max-width: 46rem;
+  margin-inline: auto;
+  text-align: center;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.9rem);
+  line-height: 1.12;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.rifka-quote blockquote::first-letter { color: var(--yellow); }
+
+/* ═══════════════════════════════ SYMBOLE ═══════════════════════════════ */
+
+.rifka-symbole { background: var(--ink); }
+
+.rifka-symbole__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+.rifka-symbole__text .section__title { margin-bottom: 1.2rem; }
+.rifka-symbole__text p { color: var(--text-dim); margin-bottom: 1rem; max-width: 42ch; }
+.rifka-symbole__text strong { color: var(--text); }
+.rifka-symbole__text .btn { margin-top: .8rem; }
+
+.rifka-values { display: grid; gap: .9rem; }
+.rifka-values li {
+  display: flex;
+  gap: 1rem;
+  padding: 1.1rem 1.3rem;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: rgb(255 255 255 / .03);
+  transition: border-color .3s, transform .35s var(--ease), background .3s;
+}
+.rifka-values li:hover {
+  border-color: rgb(255 212 0 / .4);
+  transform: translateX(4px);
+  background: rgb(255 255 255 / .05);
+}
+.rifka-values span { color: var(--red); font-size: 1.1rem; line-height: 1.4; }
+.rifka-values div { display: grid; gap: .15rem; }
+.rifka-values strong {
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+
+@media (max-width: 860px) {
+  .rifka-symbole__inner { grid-template-columns: 1fr; }
+}
