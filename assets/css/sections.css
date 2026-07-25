@@ -15,7 +15,9 @@
   padding-block: clamp(6.5rem, 13vh, 8.5rem) clamp(3rem, 7vh, 5rem);
   overflow: hidden;
   isolation: isolate;
-  background: url('../img/kv/hero-bg.jpg') center 60% / cover no-repeat;
+  /* le nom porte un suffixe de version : en le changeant à chaque nouvelle
+     photo, les téléphones qui gardent l'ancienne en cache la rechargent */
+  background: url('../img/kv/hero-bg-v2.jpg') center 60% / cover no-repeat;
 }
 
 .hero__grid-lines {
@@ -160,6 +162,23 @@
   overflow: hidden;
   isolation: isolate;
 }
+/* le bas du plateau se dissout dans le noir de la page : la photo ne s'arrête
+   plus net sur le fond sombre du jeu, il n'y a donc plus de trait de coupure
+   entre les deux sections. Le dégradé passe sous les sachets (z-index: -1),
+   qui restent éclairés. */
+.pack-band::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 58%;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+    rgb(10 10 14 / 0),
+    rgb(10 10 14 / .5)  40%,
+    rgb(10 10 14 / .9)  78%,
+    var(--ink)         100%);
+}
 
 .pack-band__grid {
   display: grid;
@@ -192,6 +211,72 @@
 @media (max-width: 700px) {
   .pack-band__grid { grid-template-columns: 1fr; justify-items: center; gap: 2.5rem; }
   .pack-band__item--mid { order: -1; }
+}
+
+/* ─── raccord bandeau → jeu ─────────────────────────────────────────────── */
+/* bloc charnière posé entre les deux sections, sur le même noir que la fin du
+   dégradé du plateau et que le haut du jeu : aucune arête visible. */
+.pack-link {
+  display: grid;
+  justify-items: center;
+  gap: .8rem;
+  padding-block: clamp(.75rem, 2.5vw, 1.75rem) 0;
+  background: var(--ink);
+  color: var(--text-dim);
+  text-align: center;
+  text-decoration: none;
+}
+
+.pack-link__label {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  transition: color .3s;
+}
+
+.pack-link__thread {
+  position: relative;
+  width: 2px;
+  height: clamp(2.6rem, 7vw, 4.2rem);
+  border-radius: 999px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgb(255 255 255 / .05), rgb(255 255 255 / .2));
+}
+/* une étincelle aux couleurs de la marque descend le long du fil : le regard
+   la suit et atterrit sur le plateau du jeu */
+.pack-link__thread::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  height: 45%;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, transparent, var(--yellow), var(--red), transparent);
+  animation: threadSpark 2.2s var(--ease) infinite;
+}
+@keyframes threadSpark {
+  0%   { transform: translateY(-120%); opacity: 0; }
+  25%  { opacity: 1; }
+  100% { transform: translateY(230%); opacity: 0; }
+}
+
+.pack-link__chev {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--ink-2);
+  color: var(--yellow);
+  transition: transform .4s var(--ease), border-color .3s, background .3s;
+}
+
+.pack-link:hover .pack-link__label { color: var(--text); }
+.pack-link:hover .pack-link__chev {
+  transform: translateY(4px);
+  border-color: var(--yellow);
+  background: rgb(255 212 0 / .12);
 }
 
 /* ═══════════════════════════════ SAVEURS ═══════════════════════════════ */
@@ -372,6 +457,9 @@
   background:
     radial-gradient(55% 50% at 18% 85%, rgb(228 3 46 / .1), transparent 65%),
     var(--ink);
+  /* le haut est déjà occupé par le raccord `.pack-link` qui descend du bandeau
+     des sachets : on resserre pour que le fil arrive directement sur le titre */
+  padding-top: clamp(1.5rem, 4vw, 2.5rem);
 }
 .hide-game .section__kicker { color: var(--red); }
 
