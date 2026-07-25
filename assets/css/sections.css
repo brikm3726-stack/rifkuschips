@@ -30,6 +30,28 @@
   pointer-events: none;
 }
 
+/* chips floutées fondues dans le fond : le noir du JPEG disparaît en mode
+   « screen » sur le hero sombre, seules les chips lumineuses transparaissent */
+.hero__chips {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: -6%;
+  translate: -50% 0;
+  width: min(120%, 1500px);
+  aspect-ratio: 1500 / 1000;
+  background: url('../img/kv/hero-chips-a.webp') center/contain no-repeat;
+  filter: blur(3px) saturate(.85);
+  mix-blend-mode: screen;
+  opacity: .5;
+  pointer-events: none;
+  animation: chipsFloat 16s ease-in-out infinite alternate;
+}
+@keyframes chipsFloat {
+  from { transform: translateY(0) scale(1); }
+  to   { transform: translateY(-14px) scale(1.03); }
+}
+
 .hero__particles {
   position: absolute;
   inset: 0;
