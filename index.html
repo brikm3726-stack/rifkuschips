@@ -109,8 +109,8 @@
       </div>
 
       <dl class="hero__stats anim" data-anim="up" data-delay="680">
-        <div><dt>Saveurs</dt><dd><span class="count" data-count="10">10</span></dd></div>
-        <div><dt>Gammes</dt><dd><span class="count" data-count="4">4</span></dd></div>
+        <div><dt>Saveurs</dt><dd><span class="count" data-count="13">13</span></dd></div>
+        <div><dt>Gammes</dt><dd><span class="count" data-count="6">6</span></dd></div>
         <div><dt>Croustillant</dt><dd><span class="count" data-count="100">100</span>%</dd></div>
       </dl>
     </div>
@@ -203,7 +203,7 @@
       <p class="section__kicker anim" data-anim="up">01 — La gamme</p>
       <h2 class="section__title anim" data-anim="words">Nos saveurs</h2>
       <p class="section__lead anim" data-anim="up" data-delay="120">
-        Quatre gammes, dix caractères. Chaque sachet Rifkus a sa personnalité,
+        Six gammes, treize caractères. Chaque sachet Rifkus a sa personnalité,
         sa couleur et son moment.
       </p>
     </header>
@@ -211,8 +211,10 @@
     <div class="filters anim" data-anim="up" data-delay="160" role="tablist" aria-label="Filtrer les saveurs">
       <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Tout</button>
       <button class="filter" data-filter="chips" role="tab" aria-selected="false">Potato Chips</button>
+      <button class="filter" data-filter="crispy" role="tab" aria-selected="false">Crispy Chips</button>
       <button class="filter" data-filter="rings" role="tab" aria-selected="false">Crispy Rings</button>
       <button class="filter" data-filter="puffs" role="tab" aria-selected="false">Puffs Corn</button>
+      <button class="filter" data-filter="bubbles" role="tab" aria-selected="false">Bubbles Chips</button>
       <button class="filter" data-filter="feu" role="tab" aria-selected="false">Édition Feu</button>
     </div>
 
@@ -278,17 +280,58 @@
         </div>
       </article>
 
+      <article class="flavor-card anim" data-anim="card" data-range="crispy"
+        style="--f:#4FA82E; --f-deep:#0E2D08"
+        data-name="Chilli &amp; Citron Vert" data-label="Crispy Chips"
+        data-img="assets/img/packs/crispy-chilli-citron-vert.png"
+        data-heat="3"
+        data-moment="L’apéro qui réveille"
+        data-long="Le piment frais et le zeste de citron vert sur une chips gaufrée au maillage serré. Ça pique juste ce qu’il faut, puis l’acidulé passe derrière et relance la main vers le sachet.">
+        <div class="flavor-card__bg" aria-hidden="true"></div>
+        <div class="flavor-card__shine" aria-hidden="true"></div>
+        <div class="flavor-card__media">
+          <img src="assets/img/packs/crispy-chilli-citron-vert.png" alt="Rifkus Crispy Chips saveur Chilli &amp; Citron Vert" width="572" height="780" loading="lazy">
+        </div>
+        <div class="flavor-card__body">
+          <p class="flavor-card__range">Crispy Chips</p>
+          <h3 class="flavor-card__name">Chilli &amp; Citron Vert</h3>
+          <p class="flavor-card__desc">Piquant, acidulé, vif. Le réveil du palais.</p>
+          <span class="flavor-card__cta">Découvrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
+      <article class="flavor-card anim" data-anim="card" data-range="crispy"
+        style="--f:#E02B24; --f-deep:#3A0308"
+        data-name="Chili &amp; Citron" data-label="Crispy Chips"
+        data-img="assets/img/packs/crispy-chili-citron.png"
+        data-heat="4"
+        data-moment="Le match du vendredi"
+        data-long="La version chaude du duo : chili grillé et citron jaune sur la même chips gaufrée. Plus ronde, plus intense, elle chauffe lentement et ne redescend qu’au dernier morceau.">
+        <div class="flavor-card__bg" aria-hidden="true"></div>
+        <div class="flavor-card__shine" aria-hidden="true"></div>
+        <span class="flavor-card__badge">✨ Nouveau</span>
+        <div class="flavor-card__media">
+          <img src="assets/img/packs/crispy-chili-citron.png" alt="Rifkus Crispy Chips saveur Chili &amp; Citron" width="560" height="780" loading="lazy">
+        </div>
+        <div class="flavor-card__body">
+          <p class="flavor-card__range">Crispy Chips</p>
+          <h3 class="flavor-card__name">Chili &amp; Citron</h3>
+          <p class="flavor-card__desc">Chili grillé, citron jaune. Ça chauffe et ça tient.</p>
+          <span class="flavor-card__cta">Découvrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
       <article class="flavor-card anim" data-anim="card" data-range="rings"
         style="--f:#1E9BD7; --f-deep:#062E45"
         data-name="Anneaux Pizza" data-label="Crispy Rings"
-        data-img="assets/img/packs/rings-pizza-v2.webp"
+        data-img="assets/img/packs/rings-pizza-v3.png"
         data-heat="1"
         data-moment="La soirée entre potes"
         data-long="Tomate, origan et fromage sur des anneaux de maïs ultra légers. Une part de pizza à chaque bouchée, sans attendre la livraison.">
         <div class="flavor-card__bg" aria-hidden="true"></div>
         <div class="flavor-card__shine" aria-hidden="true"></div>
         <div class="flavor-card__media">
-          <img src="assets/img/packs/rings-pizza-v2.webp" alt="Rifkus Crispy Rings saveur Pizza" width="463" height="645" loading="lazy">
+          <img src="assets/img/packs/rings-pizza-v3.png" alt="Rifkus Crispy Rings saveur Pizza" width="586" height="780" loading="lazy">
         </div>
         <div class="flavor-card__body">
           <p class="flavor-card__range">Crispy Rings</p>
@@ -398,6 +441,26 @@
         </div>
       </article>
 
+      <article class="flavor-card anim" data-anim="card" data-range="bubbles"
+        style="--f:#F5C542; --f-deep:#4A3305"
+        data-name="Miel &amp; Moutarde" data-label="Bubbles Chips"
+        data-img="assets/img/packs/bubbles-miel-moutarde.png"
+        data-heat="1" data-kcal="150"
+        data-moment="Le goûter partagé"
+        data-long="Des bulles de maïs soufflé, légères comme rien, où le miel adoucit la moutarde sans l’effacer. Sucré au début, relevé à la fin — la saveur qui surprend tout le monde au premier essai.">
+        <div class="flavor-card__bg" aria-hidden="true"></div>
+        <div class="flavor-card__shine" aria-hidden="true"></div>
+        <div class="flavor-card__media">
+          <img src="assets/img/packs/bubbles-miel-moutarde.png" alt="Rifkus Bubbles Chips saveur Miel &amp; Moutarde" width="723" height="780" loading="lazy">
+        </div>
+        <div class="flavor-card__body">
+          <p class="flavor-card__range">Bubbles Chips</p>
+          <h3 class="flavor-card__name">Miel &amp; Moutarde</h3>
+          <p class="flavor-card__desc">Doux puis relevé. Léger comme une bulle.</p>
+          <span class="flavor-card__cta">Découvrir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </article>
+
       <article class="flavor-card flavor-card--fire anim" data-anim="card" data-range="feu"
         style="--f:#FF3B1F; --f-deep:#2A0400"
         data-name="Harissa" data-label="Édition Feu"
@@ -457,7 +520,7 @@
           <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 13v11l7 5"/></svg>
         </div>
         <h3>Un snack pour chaque moment</h3>
-        <p>La pause de 16&nbsp;h, le match, la route, la soirée. Quatre gammes pour ne jamais tomber à court.</p>
+        <p>La pause de 16&nbsp;h, le match, la route, la soirée. Six gammes pour ne jamais tomber à court.</p>
         <span class="why__num" aria-hidden="true">03</span>
       </article>
 
@@ -673,8 +736,10 @@
       <div>
         <h4>Les gammes</h4>
         <a href="#saveurs" data-jump="chips">Potato Chips</a>
+        <a href="#saveurs" data-jump="crispy">Crispy Chips</a>
         <a href="#saveurs" data-jump="rings">Crispy Rings</a>
         <a href="#saveurs" data-jump="puffs">Puffs Corn</a>
+        <a href="#saveurs" data-jump="bubbles">Bubbles Chips</a>
         <a href="#saveurs" data-jump="feu">Édition Feu</a>
       </div>
       <div>
