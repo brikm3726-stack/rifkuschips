@@ -228,6 +228,16 @@ h4 { font-family: 'Outfit', sans-serif; }
     transform .95s var(--ease-out) var(--d, 0ms);
 }
 
+/* Sur téléphone, ces `scale` donnent l'impression que la page grossit d'un
+   cran à chaque fois qu'on fait défiler — ça se lit comme un bug, pas comme
+   une animation. On garde le fondu et un léger glissement, on retire tout
+   changement d'échelle : la page reste à sa taille pendant tout le scroll. */
+@media (max-width: 640px) {
+  .anim[data-anim='up']   { transform: translateY(16px); }
+  .anim[data-anim='card'] { transform: translateY(20px); }
+  .anim[data-anim='pop']  { transform: translateY(24px) rotate(var(--rot, 0deg)); }
+}
+
 /* headline découpée en mots / lettres par ui.js */
 .anim[data-anim='words'],
 .anim[data-anim='chars'] { opacity: 1; }

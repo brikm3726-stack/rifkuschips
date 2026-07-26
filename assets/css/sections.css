@@ -178,9 +178,9 @@
    reprend donc `100svh` (le `min-height: auto` ci-dessus vise les
    tablettes), et le bandeau des sachets ne dépasse plus par en dessous.
 
-   Le bloc de texte est ramassé en haut, centré et réduit ; la photo est
-   recadrée pour que le sachet glisse vers la droite et descende sous le
-   texte. Les deux ne se recouvrent plus.
+   L'écran se lit en trois bandes : le texte en haut, le sachet au milieu,
+   les chiffres et les boutons collés tout en bas. Le sachet n'est donc
+   recouvert par rien.
 
    L'ordre visuel change aussi : les boutons passent SOUS les trois
    chiffres. C'est fait avec `order` et non dans le HTML, pour que le
@@ -188,22 +188,27 @@
 @media (max-width: 640px) {
   .hero {
     min-height: 100svh;
+    align-items: stretch;        /* la colonne prend toute la hauteur, sinon
+                                    le `margin-top: auto` des chiffres n'a
+                                    rien contre quoi pousser */
     padding-block: 6.25rem 1.75rem;
   }
 
-  /* `auto 108%` donne juste assez de mou vertical pour faire descendre le
-     sachet sous les boutons — `cover` calerait la photo pile sur la hauteur
-     de l'écran et aucun recadrage ne serait possible. Le 48% horizontal
-     décale le sachet vers la droite — au-delà, son bord droit sort du cadre
-     sur les grands téléphones (430 px), où le zoom de `cover` est plus fort. */
+  /* cadrage le plus large possible : `104%` est à peine au-dessus de `cover`
+     (le minimum qui remplisse l'écran), la scène respire donc au maximum.
+     Le mou de 4 % sert à remonter la photo — ancrée en bas, le sachet passe
+     au-dessus des chiffres au lieu de finir derrière eux. Le 48% horizontal
+     le décale vers la droite ; au-delà son bord droit sort du cadre sur les
+     grands téléphones (430 px), où `cover` zoome plus fort. */
   .hero::before {
-    background-size: auto 108%;
-    background-position: 48% top;
+    background-size: auto 104%;
+    background-position: 48% bottom;
   }
 
-  .hero__inner { width: 100%; }
+  .hero__inner { width: 100%; display: flex; }
 
   .hero__copy {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -231,11 +236,15 @@
     max-width: 18rem;
     font-size: .78rem;
     line-height: 1.5;
-    margin-bottom: .95rem;
+    margin-bottom: 0;
   }
 
+  /* `margin-top: auto` : tout l'espace libre est repoussé au-dessus, donc les
+     chiffres et les boutons se collent au bas de l'écran et le sachet garde
+     le milieu pour lui */
   .hero__stats {
     order: 4;
+    margin-top: auto;
     width: 100%;
     max-width: 19rem;
     justify-content: space-between;
@@ -348,16 +357,6 @@
   }
   .pack-band__item--mid { order: 0; }
   .pack-band__item img { width: min(100%, 130px); }
-}
-
-/* Écrans courts (petits Android ~360×740) : `cover` y zoome moins, le sachet
-   remonte donc derrière les boutons. On le redescend avec un cadrage plus
-   serré — il occupe alors presque toute la largeur, d'où le recentrage. */
-@media (max-width: 640px) and (max-height: 800px) {
-  .hero::before {
-    background-size: auto 124%;
-    background-position: 50% top;
-  }
 }
 
 /* ─── raccord bandeau → jeu ─────────────────────────────────────────────── */
