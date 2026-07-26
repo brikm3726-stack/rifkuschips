@@ -610,7 +610,7 @@
 .hide-game .section__kicker { color: var(--red); }
 
 .hide-game__panel {
-  max-width: 34rem;
+  max-width: 38rem;
   margin-inline: auto;
   text-align: center;
 }
@@ -625,19 +625,31 @@
 .hide-game__board {
   display: flex;
   justify-content: center;
-  gap: clamp(1rem, 4vw, 2rem);
+  gap: clamp(.8rem, 3.5vw, 2rem);
   margin-bottom: 1.8rem;
 }
 
 .hide-game__slot {
-  width: clamp(92px, 24vw, 140px);
+  /* on laisse les caisses se réduire sur petit écran : le brassage mesure les
+     positions réelles, donc la largeur peut rester fluide */
+  flex: 0 1 164px;
+  min-width: 0;
   aspect-ratio: 1;
   background: none;
   perspective: 1400px;
+  /* le décalage du brassage passe par --x/--lift pour ne pas être écrasé
+     par le transform du :hover */
+  --x: 0px;
+  --lift: 0px;
+  --sc: 1;
+  transform: translate3d(var(--x), calc(var(--lift) + var(--hover, 0px)), 0) scale(var(--sc));
   transition: transform .4s var(--ease);
+  will-change: transform;
 }
-.hide-game__slot:not(:disabled):hover { transform: translateY(-6px); }
+/* --hover reste séparé de --lift : le brassage écrit --lift en style inline */
+.hide-game__slot:not(:disabled):hover { --hover: -6px; }
 .hide-game__slot:disabled { cursor: default; }
+.hide-game__slot.is-flying { z-index: 3; }
 
 .hide-game__crate {
   position: relative;
@@ -683,12 +695,10 @@
 .hide-game__slot.is-correct .hide-game__face--pack { border-color: #2FAE66; box-shadow: 0 0 0 4px rgb(47 174 102 / .25); }
 .hide-game__slot.is-wrong .hide-game__face--pack   { border-color: var(--red); box-shadow: 0 0 0 4px rgb(228 3 46 / .2); }
 
-@keyframes crateShuffle {
-  0%, 100% { transform: translateX(0) rotate(0); }
-  25%      { transform: translateX(-8px) rotate(-4deg); }
-  75%      { transform: translateX(8px) rotate(4deg); }
-}
-.hide-game__slot.is-shuffling .hide-game__crate { animation: crateShuffle .5s ease-in-out; }
+/* pendant le brassage la caisse s'incline légèrement dans le sens du glissement */
+.hide-game__slot.is-flying .hide-game__crate { transition: transform .22s ease-out; }
+.hide-game__slot.is-flying .hide-game__crate.is-tilt-l { transform: rotate(-6deg); }
+.hide-game__slot.is-flying .hide-game__crate.is-tilt-r { transform: rotate(6deg); }
 
 /* ═══════════════════════════ POURQUOI RIFKUS ═══════════════════════════ */
 
